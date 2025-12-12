@@ -1,0 +1,3393 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Ads India</title>
+
+
+
+
+    <!-- css -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+    <!-- Updated Icon CDN to ensure loading -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.1.0/remixicon.css" rel="stylesheet">
+
+    <!-- GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+    <!-- Three.js + OrbitControls (non-module) -->
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/build/three.min.js"></script>
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.1.0/remixicon.css" rel="stylesheet">
+    <style>
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- PORTAL LOADER -->
+    <div class="wai-loader">
+        <div class="wai-star-field"></div>
+
+        <!-- 1. 3D Orb/Rings -->
+        <div class="wai-portal-container">
+            <div class="wai-core"></div>
+            <div class="wai-ring ring-1"></div>
+            <!-- Cyan Ring -->
+            <div class="wai-ring ring-2"></div>
+            <!-- Green Ring -->
+        </div>
+
+        <!-- 2. Center UI -->
+        <div class="loader-center-ui">
+            <h1 class="wai-brand-glitch">WEB ADS INDIA</h1>
+
+            <div class="wai-bar-container">
+                <div class="wai-bar-fill"></div>
+            </div>
+
+            <div class="wai-status-row">
+                <span id="statusMsg">LOADING ASSETS...</span>
+                <span id="percentTxt">0%</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- FLASH EXIT -->
+    <div class="wai-whiteout"></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- <nav class="navbar-premium">
+        <div class="navbar-inner">
+          
+            <a href="#" class="logo">
+                <img src="assets/images/logo/WEBADS LOGO WHITE.png" class="imf-fluid" alt="">
+            </a>
+
+    
+            <ul class="nav-menu">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About Us</a></li>
+
+           
+                <li class="dropdown">
+                    <a href="#">Services <span class="arrow">&#9662;</span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">SEO</a></li>
+                        <li><a href="#">PPC Advertising</a></li>
+                        <li class="dropdown-submenu">
+                            <a href="#">Social Media Marketing <span class="arrow">&#9656;</span></a>
+                            <ul class="submenu">
+                                <li><a href="#">Facebook Marketing</a></li>
+                                <li><a href="#">Instagram Marketing</a></li>
+                                <li><a href="#">LinkedIn Marketing</a></li>
+                                <li><a href="#">Twitter Marketing</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#">Content Marketing</a></li>
+                        <li><a href="#">Email Marketing</a></li>
+                        <li><a href="#">Web Design & Development</a></li>
+                        <li><a href="#">Branding & Creative Design</a></li>
+                        <li><a href="#">Marketing Automation</a></li>
+                    </ul>
+                </li>
+
+                <li><a href="#">Portfolio</a></li>
+                <li><a href="#">Blog</a></li>
+                <li><a href="#">Careers</a></li>
+                <li><a href="#">Contact Us</a></li>
+            </ul>
+
+         
+            <a href="#" class="cta-btn desktop-only">Get a Quote</a>
+
+      
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav> -->
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Placeholder Background (REMOVE THIS DIV WHEN PASTING INTO YOUR SITE) -->
+    <div style="position: absolute; top:0; left:0; width:100%; height:100%; z-index: -1; background: #0b0b0b;"></div>
+
+
+    <!-- 1. Top Branding (Left) -->
+    <div class="brand-area">
+        <!-- IMAGE ADDED HERE -->
+        <img src="assets/images/logo/WEBADS LOGO WHITE.png" alt="WAI Logo" class="brand-logo-img">
+    </div>
+
+    <!-- 2. Top Connect Area (Right) -->
+    <div class="connect-area">
+        <div class="social-links">
+            <a href="#" class="social-icon" title="LinkedIn"><i class="ri-linkedin-fill"></i></a>
+            <a href="#" class="social-icon" title="Instagram"><i class="ri-instagram-line"></i></a>
+            <a href="#" class="social-icon" title="X (Twitter)"><i class="ri-twitter-x-line"></i></a>
+        </div>
+
+        <!-- Divider (Now Pure CSS) -->
+        <div class="connect-divider"></div>
+
+        <a href="#" class="talk-btn">Let's Talk</a>
+    </div>
+
+    <!-- 3. MAIN DOCK NAVIGATION (Bottom) -->
+    <div class="dock-container">
+
+        <!-- The Glass Capsule -->
+        <nav class="glass-dock">
+
+            <!-- HOME -->
+            <a href="index.html" class="dock-item active">
+                <i class="ri-home-wifi-line dock-icon"></i>
+                <span class="dock-label">Home</span>
+            </a>
+
+            <!-- ABOUT -->
+            <a href="about-us.html" class="dock-item">
+                <i class="ri-user-smile-line dock-icon"></i>
+                <span class="dock-label">About</span>
+            </a>
+
+            <div class="dock-divider"></div>
+
+            <!-- SERVICES (TRIGGER FOR POP-UP) -->
+            <div class="dock-item services-trigger" style="position: relative;">
+                <i class="ri-stack-line dock-icon" style="color: var(--neon-green) !important;"></i>
+                <span class="dock-label" style="color: var(--neon-green) !important;">Services</span>
+
+                <!-- THE HOLO-STACK MENU (Opens Upwards) -->
+                <div class="services-stack">
+                    <a href="web-developement.html" class="stack-item">
+                        <i class="ri-code-s-slash-line"></i>
+                        <span>Web Development</span>
+                    </a>
+                    <a href="web-developement.html" class="stack-item">
+                        <i class="ri-smartphone-line"></i>
+                        <span>App Design</span>
+                    </a>
+                    <a href="web-developement.html" class="stack-item">
+                        <i class="ri-rocket-line"></i>
+                        <span>SEO & Growth</span>
+                    </a>
+                    <a href="web-developement.html" class="stack-item">
+                        <i class="ri-cube-line"></i>
+                        <span>3D Visuals</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- BLOG -->
+            <a href="#" class="dock-item">
+                <i class="ri-article-line dock-icon"></i>
+                <span class="dock-label">Blog</span>
+            </a>
+
+            <div class="dock-divider"></div>
+
+            <!-- CONTACT -->
+            <a href="contact-us.html" class="dock-item">
+                <i class="ri-mail-send-line dock-icon"></i>
+                <span class="dock-label">Contact</span>
+            </a>
+
+        </nav>
+
+        <!-- START PROJECT (Floating Separate Button) -->
+        <div class="start-btn-wrapper">
+            <a href="" class="cta-btn">
+                <span>Start</span>
+                <i class="ri-arrow-right-up-line"></i>
+            </a>
+        </div>
+
+    </div>
+
+    <script>
+        // Animations
+        gsap.from(".dock-container", {
+            y: 100,
+            opacity: 0,
+            duration: 1.2,
+            ease: "power4.out",
+            delay: 0.5
+        });
+
+        gsap.from([".brand-area", ".connect-area"], {
+            y: -50,
+            opacity: 0,
+            duration: 1,
+            ease: "power2.out",
+            delay: 0.2,
+            stagger: 0.2
+        });
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- hero section -->
+    <section id="hero">
+        <div id="particles-js"></div>
+
+        <div class="hero-content">
+            <h1 class="hero-title">
+                <span id="typing-text"></span>
+                <span class="cursor">|</span>
+            </h1>
+
+            <p class="hero-sub">
+                Premium IT & Digital Marketing Solutions that elevate brands and accelerate business growth.
+            </p>
+
+            <p class="hero-description">
+                From Website Development to SEO, Branding, Ads & Automation — we deliver results that make you stand out in the digital world.
+            </p>
+
+            <a href="#contact" class="hero-btn">Get Started</a>
+        </div>
+    </section>
+
+    <!-- hero section -->
+
+
+
+
+
+
+
+    <!-- <section id="scrollZoomHero">
+        <div class="szh-image-wrapper">
+            <img src="assets/images/background-images/ChatGPT Image Nov 20, 2025, 02_27_28 PM.png" class="szh-main-image" alt="Hero Mockup">
+        </div>
+
+        <div class="szh-text-area">
+            <h1 class="szh-heading">
+                <span id="szh-typing"></span>
+                <span class="szh-cursor">|</span>
+            </h1>
+        </div>
+    </section> -->
+
+
+    <!-- MARQUEE SECTION -->
+    <div class="wai-marquee-section">
+
+        <!-- Decorative Borders -->
+        <div class="wai-mq-border-top"></div>
+        <div class="wai-mq-border-bottom"></div>
+
+        <div class="wai-marquee-track">
+
+            <!-- GROUP 1 -->
+            <div class="wai-mq-item">
+                <i class="ri-rocket-2-line wai-mq-icon"></i>
+                <span class="wai-mq-text">Performance Ads</span>
+                <span class="wai-mq-separator">///</span>
+            </div>
+
+            <div class="wai-mq-item">
+                <i class="ri-search-eye-line wai-mq-icon"></i>
+                <span class="wai-mq-text">SEO Optimization</span>
+                <span class="wai-mq-separator">///</span>
+            </div>
+
+            <div class="wai-mq-item">
+                <i class="ri-code-s-slash-line wai-mq-icon"></i>
+                <span class="wai-mq-text">Web Development</span>
+                <span class="wai-mq-separator">///</span>
+            </div>
+
+            <div class="wai-mq-item">
+                <i class="ri-palette-line wai-mq-icon"></i>
+                <span class="wai-mq-text">Branding Design</span>
+                <span class="wai-mq-separator">///</span>
+            </div>
+
+            <div class="wai-mq-item">
+                <i class="ri-brain-line wai-mq-icon"></i>
+                <span class="wai-mq-text">AI Automation</span>
+                <span class="wai-mq-separator">///</span>
+            </div>
+
+            <div class="wai-mq-item">
+                <i class="ri-shopping-bag-3-line wai-mq-icon"></i>
+                <span class="wai-mq-text">E-Commerce Scaling</span>
+                <span class="wai-mq-separator">///</span>
+            </div>
+
+            <!-- DUPLICATE GROUP (For Seamless Loop) -->
+            <div class="wai-mq-item">
+                <i class="ri-rocket-2-line wai-mq-icon"></i>
+                <span class="wai-mq-text">Performance Ads</span>
+                <span class="wai-mq-separator">///</span>
+            </div>
+
+            <div class="wai-mq-item">
+                <i class="ri-search-eye-line wai-mq-icon"></i>
+                <span class="wai-mq-text">SEO Optimization</span>
+                <span class="wai-mq-separator">///</span>
+            </div>
+
+            <div class="wai-mq-item">
+                <i class="ri-code-s-slash-line wai-mq-icon"></i>
+                <span class="wai-mq-text">Web Development</span>
+                <span class="wai-mq-separator">///</span>
+            </div>
+
+            <div class="wai-mq-item">
+                <i class="ri-palette-line wai-mq-icon"></i>
+                <span class="wai-mq-text">Branding Design</span>
+                <span class="wai-mq-separator">///</span>
+            </div>
+
+            <div class="wai-mq-item">
+                <i class="ri-brain-line wai-mq-icon"></i>
+                <span class="wai-mq-text">AI Automation</span>
+                <span class="wai-mq-separator">///</span>
+            </div>
+
+            <div class="wai-mq-item">
+                <i class="ri-shopping-bag-3-line wai-mq-icon"></i>
+                <span class="wai-mq-text">E-Commerce Scaling</span>
+                <span class="wai-mq-separator">///</span>
+            </div>
+
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <section class="wa-stats-section">
+        <div class="wa-stats-container">
+
+            <!-- CARD 1 -->
+            <div class="wa-card wa-fixed">
+                <span class="wa-icon">📊</span>
+                <h3 class="wa-title">Decades of Digital Brilliance</h3>
+                <div class="wa-line"></div>
+                <p class="wa-text">
+                    With over 20 years of digital marketing mastery, we’ve navigated every trend and challenge the industry has thrown our way.
+                </p>
+            </div>
+
+            <!-- CARD 2 (FIXED BACKGROUND COLOR) -->
+            <div class="wa-card  wa-animate">
+                <span class="wa-icon">🚀</span>
+                <h3 class="wa-title">Fortune 500 Fans</h3>
+                <div class="wa-line"></div>
+                <p class="wa-text">
+                    We get results for big brands, but we’re cool with you too. We speak plain English and get down to the nitty-gritty to help businesses dominate.
+                </p>
+            </div>
+
+            <!-- CARD 3 -->
+            <div class="wa-card wa-animate">
+                <span class="wa-icon">📈</span>
+                <h3 class="wa-title">Industry Ninjas</h3>
+                <div class="wa-line"></div>
+                <p class="wa-text">
+                    Tech startups? Cozy cafes? Done that. Helped businesses win online, from spaceships to spatulas.
+                </p>
+            </div>
+
+        </div>
+    </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- <section id="hw-services-master-section">
+        <div class="hw-bg-image"></div>
+
+        <div class="hw-services-container">
+
+            <h1 class="intro-title">
+                <span>OUR SERVICES</span>
+            </h1>
+            <p class="hw-services-sub">
+                WE WORK WITH YOU, NOT FOR YOU
+            </p>
+
+            <div class="hw-services-grid">
+
+                <div class="hw-service-card">
+                    <div class="hw-inner-ani"></div>
+                    <i class="fas fa-bullhorn"></i>
+                    <span>Performance Marketing</span>
+                    <div class="hw-arrow">→</div>
+                </div>
+
+                <div class="hw-service-card">
+                    <div class="hw-inner-ani"></div>
+                    <i class="fas fa-mobile"></i>
+                    <span>Social Media Marketing</span>
+                    <div class="hw-arrow">→</div>
+                </div>
+
+                <div class="hw-service-card">
+                    <div class="hw-inner-ani"></div>
+                    <i class="fas fa-search"></i>
+                    <span>Search Engine Optimization</span>
+                    <div class="hw-arrow">→</div>
+                </div>
+
+                <div class="hw-service-card">
+                    <div class="hw-inner-ani"></div>
+                    <i class="fas fa-pencil-ruler"></i>
+                    <span>Creative Services</span>
+                    <div class="hw-arrow">→</div>
+                </div>
+
+                <div class="hw-service-card">
+                    <div class="hw-inner-ani"></div>
+                    <i class="fab fa-amazon"></i>
+                    <span>Amazon Ads</span>
+                    <div class="hw-arrow">→</div>
+                </div>
+
+                <div class="hw-service-card">
+                    <div class="hw-inner-ani"></div>
+                    <i class="fas fa-envelope"></i>
+                    <span>Email Marketing</span>
+                    <div class="hw-arrow">→</div>
+                </div>
+
+            
+                <div class="hw-service-card">
+                    <div class="hw-inner-ani"></div>
+                    <i class="fas fa-layer-group"></i>
+                    <span>UI / UX Design</span>
+                    <div class="hw-arrow">→</div>
+                </div>
+
+                
+                <div class="hw-service-card">
+                    <div class="hw-inner-ani"></div>
+                    <i class="fas fa-bullseye"></i>
+                    <span>PR & Branding</span>
+                    <div class="hw-arrow">→</div>
+                </div>
+
+       
+                <div class="hw-service-card">
+                    <div class="hw-inner-ani"></div>
+                    <i class="fas fa-pencil-alt"></i>
+                    <span>Brand Building & Storytelling</span>
+                    <div class="hw-arrow">→</div>
+                </div>
+
+            </div>
+
+        </div>
+    </section> -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Background Elements -->
+    <div class="wai-svc-noise"></div>
+    <div class="wai-svc-bg-orb"></div>
+
+    <section class="wai-svc-section" id="services">
+
+        <!-- Header -->
+        <div class="wai-svc-header">
+            <span class="wai-svc-subtitle">Excellence in Execution</span>
+            <h2 class="wai-svc-title">OUR EXPERTISE</h2>
+        </div>
+
+        <!-- Grid -->
+        <div class="wai-svc-grid">
+
+            <!-- Card 01 -->
+            <div class="wai-svc-card">
+                <div class="wai-svc-border-anim"></div>
+                <div class="wai-svc-inner">
+                    <div class="wai-svc-spot"></div>
+                    <div class="wai-svc-number">01</div>
+
+                    <div class="wai-svc-icon-box">
+                        <i class="ri-megaphone-line"></i>
+                    </div>
+
+                    <h3 class="wai-svc-card-title">Performance Marketing</h3>
+                    <p class="wai-svc-card-desc">Maximize your ROI with data-driven ad campaigns that target the right audience at the perfect time.</p>
+
+                    <div class="wai-svc-link">
+                        Explore <i class="ri-arrow-right-line"></i>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 02 -->
+            <div class="wai-svc-card">
+                <div class="wai-svc-border-anim"></div>
+                <div class="wai-svc-inner">
+                    <div class="wai-svc-spot"></div>
+                    <div class="wai-svc-number">02</div>
+
+                    <div class="wai-svc-icon-box">
+                        <i class="ri-smartphone-line"></i>
+                    </div>
+
+                    <h3 class="wai-svc-card-title">Social Media Marketing</h3>
+                    <p class="wai-svc-card-desc">Build a loyal community and amplify your brand voice across Instagram, LinkedIn, and Twitter.</p>
+
+                    <div class="wai-svc-link">
+                        Explore <i class="ri-arrow-right-line"></i>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 03 -->
+            <div class="wai-svc-card">
+                <div class="wai-svc-border-anim"></div>
+                <div class="wai-svc-inner">
+                    <div class="wai-svc-spot"></div>
+                    <div class="wai-svc-number">03</div>
+
+                    <div class="wai-svc-icon-box">
+                        <i class="ri-search-eye-line"></i>
+                    </div>
+
+                    <h3 class="wai-svc-card-title">SEO Optimization</h3>
+                    <p class="wai-svc-card-desc">Dominate search results with technical SEO, keyword strategy, and high-quality backlinking.</p>
+
+                    <div class="wai-svc-link">
+                        Explore <i class="ri-arrow-right-line"></i>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 04 -->
+            <div class="wai-svc-card">
+                <div class="wai-svc-border-anim"></div>
+                <div class="wai-svc-inner">
+                    <div class="wai-svc-spot"></div>
+                    <div class="wai-svc-number">04</div>
+
+                    <div class="wai-svc-icon-box">
+                        <i class="ri-brush-line"></i>
+                    </div>
+
+                    <h3 class="wai-svc-card-title">Creative Services</h3>
+                    <p class="wai-svc-card-desc">Stunning visuals, logos, and ad creatives that capture attention and communicate value instantly.</p>
+
+                    <div class="wai-svc-link">
+                        Explore <i class="ri-arrow-right-line"></i>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 05 -->
+            <div class="wai-svc-card">
+                <div class="wai-svc-border-anim"></div>
+                <div class="wai-svc-inner">
+                    <div class="wai-svc-spot"></div>
+                    <div class="wai-svc-number">05</div>
+
+                    <div class="wai-svc-icon-box">
+                        <i class="ri-amazon-line"></i>
+                    </div>
+
+                    <h3 class="wai-svc-card-title">Amazon Ads</h3>
+                    <p class="wai-svc-card-desc">Scale your e-commerce business with optimized product listings and strategic PPC campaigns.</p>
+
+                    <div class="wai-svc-link">
+                        Explore <i class="ri-arrow-right-line"></i>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 06 -->
+            <div class="wai-svc-card">
+                <div class="wai-svc-border-anim"></div>
+                <div class="wai-svc-inner">
+                    <div class="wai-svc-spot"></div>
+                    <div class="wai-svc-number">06</div>
+
+                    <div class="wai-svc-icon-box">
+                        <i class="ri-mail-send-line"></i>
+                    </div>
+
+                    <h3 class="wai-svc-card-title">Email Marketing</h3>
+                    <p class="wai-svc-card-desc">Automated flows and personalized newsletters that turn leads into repeat customers.</p>
+
+                    <div class="wai-svc-link">
+                        Explore <i class="ri-arrow-right-line"></i>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 07 -->
+            <div class="wai-svc-card">
+                <div class="wai-svc-border-anim"></div>
+                <div class="wai-svc-inner">
+                    <div class="wai-svc-spot"></div>
+                    <div class="wai-svc-number">07</div>
+
+                    <div class="wai-svc-icon-box">
+                        <i class="ri-layout-masonry-line"></i>
+                    </div>
+
+                    <h3 class="wai-svc-card-title">UI / UX Design</h3>
+                    <p class="wai-svc-card-desc">Crafting intuitive and beautiful digital experiences that are designed to convert.</p>
+
+                    <div class="wai-svc-link">
+                        Explore <i class="ri-arrow-right-line"></i>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 08 -->
+            <div class="wai-svc-card">
+                <div class="wai-svc-border-anim"></div>
+                <div class="wai-svc-inner">
+                    <div class="wai-svc-spot"></div>
+                    <div class="wai-svc-number">08</div>
+
+                    <div class="wai-svc-icon-box">
+                        <i class="ri-mic-line"></i>
+                    </div>
+
+                    <h3 class="wai-svc-card-title">PR & Branding</h3>
+                    <p class="wai-svc-card-desc">Build a strong public image and manage your brand's reputation with strategic PR.</p>
+
+                    <div class="wai-svc-link">
+                        Explore <i class="ri-arrow-right-line"></i>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 09 -->
+            <div class="wai-svc-card">
+                <div class="wai-svc-border-anim"></div>
+                <div class="wai-svc-inner">
+                    <div class="wai-svc-spot"></div>
+                    <div class="wai-svc-number">09</div>
+
+                    <div class="wai-svc-icon-box">
+                        <i class="ri-quill-pen-line"></i>
+                    </div>
+
+                    <h3 class="wai-svc-card-title">Brand Storytelling</h3>
+                    <p class="wai-svc-card-desc">We craft compelling narratives that resonate with your audience on an emotional level.</p>
+
+                    <div class="wai-svc-link">
+                        Explore <i class="ri-arrow-right-line"></i>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <script>
+        // --- GSAP ANIMATIONS ---
+        gsap.registerPlugin(ScrollTrigger);
+
+        // Header Fade In
+        gsap.from(".wai-svc-header", {
+            scrollTrigger: {
+                trigger: ".wai-svc-header",
+                start: "top 80%",
+            },
+            y: 50,
+            opacity: 0,
+            duration: 1,
+            ease: "power3.out"
+        });
+
+        // Cards Stagger Effect
+        gsap.from(".wai-svc-card", {
+            scrollTrigger: {
+                trigger: ".wai-svc-grid",
+                start: "top 75%",
+            },
+            y: 100,
+            opacity: 0,
+            duration: 0.8,
+            stagger: 0.1,
+            /* Cards appear one by one */
+            ease: "back.out(1.2)"
+        });
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- WORK SECTION -->
+    <section class="wai-work-section" id="work">
+
+        <div class="wai-work-sticky">
+
+            <div class="wai-work-grid"></div>
+            <div class="wai-work-glow"></div>
+
+            <!-- Header Updated: Centered & Matched -->
+            <div class="wai-work-header">
+                <span class="wai-work-tag">SELECTED WORKS</span>
+                <h2 class="wai-work-title">FEATURED <br> <span>MASTERPIECES</span></h2>
+            </div>
+
+            <!-- The Moving Track -->
+            <div class="wai-work-track">
+
+                <!-- Project 1 -->
+                <div class="wai-project-card">
+                    <div class="wai-card-ghost"></div>
+                    <div class="wai-card-inner">
+                        <img src="https://5.imimg.com/data5/SELLER/Default/2023/8/332112112/KO/OT/LM/2672556/web-development-programming-resized.jpg" class="wai-card-img" alt="Project 1">
+                        <div class="wai-card-info">
+                            <div class="wai-proj-cat">/ Fintech</div>
+                            <div class="wai-proj-title">Neon Banking App</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="wai-project-card">
+                    <div class="wai-card-ghost" style="border-color: var(--brand-green); box-shadow: 0 0 30px var(--brand-green);"></div>
+                    <div class="wai-card-inner">
+                        <img src="https://www.addevice.io/storage/ckeditor/uploads/images/65f840d316353_mobile.app.development.1920.1080.png" class="wai-card-img" alt="Project 2">
+                        <div class="wai-card-info">
+                            <div class="wai-proj-cat">/ E-Commerce</div>
+                            <div class="wai-proj-title">Cyber Sneaker Store</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="wai-project-card">
+                    <div class="wai-card-ghost"></div>
+                    <div class="wai-card-inner">
+                        <img src="https://transcloud.in/wp-content/uploads/2024/02/Graphic-Design-Image-1-Elevate-Your-Brand-Visual-Identity-in-the-Digital-Sphere.jpg" class="wai-card-img" alt="Project 3">
+                        <div class="wai-card-info">
+                            <div class="wai-proj-cat">/ AI Tech</div>
+                            <div class="wai-proj-title">Neural Data Dash</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 4 -->
+                <div class="wai-project-card">
+                    <div class="wai-card-ghost" style="border-color: var(--brand-green);"></div>
+                    <div class="wai-card-inner">
+                        <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=2564&auto=format&fit=crop" class="wai-card-img" alt="Project 4">
+                        <div class="wai-card-info">
+                            <div class="wai-proj-cat">/ Branding</div>
+                            <div class="wai-proj-title">Luxe Automotive</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 5 -->
+                <div class="wai-project-card">
+                    <div class="wai-card-ghost"></div>
+                    <div class="wai-card-inner">
+                        <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=2670&auto=format&fit=crop" class="wai-card-img" alt="Project 5">
+                        <div class="wai-card-info">
+                            <div class="wai-proj-cat">/ Web3</div>
+                            <div class="wai-proj-title">Metaverse Portal</div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <script>
+        gsap.registerPlugin(ScrollTrigger);
+
+        const section = document.querySelector(".wai-work-section");
+        const track = document.querySelector(".wai-work-track");
+        const cards = document.querySelectorAll(".wai-project-card");
+        const cardImages = document.querySelectorAll(".wai-card-img");
+
+        // Calculate scroll amount: Track Width - Screen Width
+        const getScrollAmount = () => -(track.scrollWidth - window.innerWidth);
+
+        // 1. HORIZONTAL SCROLL
+        const tween = gsap.to(track, {
+            x: getScrollAmount,
+            ease: "none",
+            scrollTrigger: {
+                trigger: ".wai-work-section",
+                start: "top top",
+                end: "bottom bottom",
+                scrub: 1, // Smooth scrubbing
+                pin: ".wai-work-sticky", // Pins the content
+                invalidateOnRefresh: true,
+                onUpdate: (self) => {
+                    // 2. VELOCITY SKEW EFFECT
+                    const skew = self.getVelocity() / 300;
+                    // Limit max skew to avoid glitches
+                    const clampedSkew = Math.max(-10, Math.min(10, skew));
+
+                    gsap.to(track, {
+                        skewX: -clampedSkew,
+                        overwrite: "auto",
+                        duration: 0.1
+                    });
+                }
+            }
+        });
+
+        // 3. PARALLAX IMAGE EFFECT INSIDE CARDS
+        // As container moves left, move images slightly right inside their frames
+        cardImages.forEach((img) => {
+            gsap.to(img, {
+                x: "10%", // Move image 10% to the right
+                ease: "none",
+                scrollTrigger: {
+                    trigger: ".wai-work-section",
+                    start: "top top",
+                    end: "bottom bottom",
+                    scrub: 1
+                }
+            });
+        });
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- our process -->
+    <section class="wai-proc-section">
+
+        <!-- Animated Background Orbs -->
+        <div class="wai-proc-orb orb-1"></div>
+        <div class="wai-proc-orb orb-2"></div>
+
+        <!-- Header -->
+        <div class="wai-proc-header">
+            <span class="wai-proc-tag">THE BLUEPRINT</span>
+            <h2 class="wai-proc-title">HOW WE ENGINEER <br><span>GROWTH</span></h2>
+        </div>
+
+        <!-- Timeline -->
+        <div class="wai-timeline">
+
+            <!-- Center Beam -->
+            <div class="wai-timeline-beam"></div>
+            <div class="wai-beam-fill"></div>
+
+            <!-- STEP 01 -->
+            <div class="wai-proc-step">
+                <!-- Center Node -->
+                <div class="wai-proc-node">01</div>
+
+                <!-- Text Content -->
+                <div class="wai-proc-content wai-proc-text">
+                    <div class="wai-big-num">01</div>
+                    <h3 class="wai-proc-head">Deep Dive Audit</h3>
+                    <p class="wai-proc-desc">
+                        We strip your brand down to its core. We analyze competitors, audience behavior, and tech gaps to find hidden opportunities.
+                    </p>
+                    <div style="display:flex; gap:15px; flex-wrap:wrap;">
+                        <span style="font-size:0.8rem; border:1px solid rgba(255,255,255,0.2); padding:5px 12px; border-radius:20px; color:#fff;">Research</span>
+                        <span style="font-size:0.8rem; border:1px solid rgba(255,255,255,0.2); padding:5px 12px; border-radius:20px; color:#fff;">Data Mining</span>
+                    </div>
+                </div>
+
+                <!-- Visual -->
+                <div class="wai-proc-visual">
+                    <div class="wai-visual-inner">
+                        <div class="wai-visual-overlay"></div>
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2670&auto=format&fit=crop" class="wai-visual-img" alt="Audit">
+                    </div>
+                </div>
+            </div>
+
+            <!-- STEP 02 -->
+            <div class="wai-proc-step reverse">
+                <div class="wai-proc-node">02</div>
+
+                <div class="wai-proc-content wai-proc-text">
+                    <div class="wai-big-num">02</div>
+                    <h3 class="wai-proc-head">Strategic Roadmap</h3>
+                    <p class="wai-proc-desc">
+                        No guesswork. We design a high-octane strategy tailored to your goals, combining creative visuals with data-backed targeting.
+                    </p>
+                    <div style="display:flex; gap:15px; flex-wrap:wrap;">
+                        <span style="font-size:0.8rem; border:1px solid rgba(255,255,255,0.2); padding:5px 12px; border-radius:20px; color:#fff;">Planning</span>
+                        <span style="font-size:0.8rem; border:1px solid rgba(255,255,255,0.2); padding:5px 12px; border-radius:20px; color:#fff;">UI/UX</span>
+                    </div>
+                </div>
+
+                <div class="wai-proc-visual">
+                    <div class="wai-visual-inner">
+                        <div class="wai-visual-overlay"></div>
+                        <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=2670&auto=format&fit=crop" class="wai-visual-img" alt="Strategy">
+                    </div>
+                </div>
+            </div>
+
+            <!-- STEP 03 -->
+            <div class="wai-proc-step">
+                <div class="wai-proc-node">03</div>
+
+                <div class="wai-proc-content wai-proc-text">
+                    <div class="wai-big-num">03</div>
+                    <h3 class="wai-proc-head">Launch & Scale</h3>
+                    <p class="wai-proc-desc">
+                        Execution is everything. We launch campaigns, monitor real-time data, and optimize aggressively for maximum ROI.
+                    </p>
+                    <div style="display:flex; gap:15px; flex-wrap:wrap;">
+                        <span style="font-size:0.8rem; border:1px solid rgba(255,255,255,0.2); padding:5px 12px; border-radius:20px; color:#fff;">Execution</span>
+                        <span style="font-size:0.8rem; border:1px solid rgba(255,255,255,0.2); padding:5px 12px; border-radius:20px; color:#fff;">Optimization</span>
+                    </div>
+                </div>
+
+                <div class="wai-proc-visual">
+                    <div class="wai-visual-inner">
+                        <div class="wai-visual-overlay"></div>
+                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2426&auto=format&fit=crop" class="wai-visual-img" alt="Scale">
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+
+    <script>
+        gsap.registerPlugin(ScrollTrigger);
+
+        // Header Reveal
+        gsap.from(".wai-proc-header", {
+            scrollTrigger: {
+                trigger: ".wai-proc-header",
+                start: "top 80%"
+            },
+            y: 50,
+            opacity: 0,
+            duration: 1,
+            ease: "power3.out"
+        });
+
+        // Beam Fill Animation
+        gsap.to(".wai-beam-fill", {
+            height: "100%",
+            scrollTrigger: {
+                trigger: ".wai-timeline",
+                start: "top 60%",
+                end: "bottom 60%",
+                scrub: 1,
+            }
+        });
+
+        // Step Animations
+        const steps = document.querySelectorAll('.wai-proc-step');
+        steps.forEach((step, i) => {
+            // Text Slide In
+            gsap.from(step.querySelector('.wai-proc-text'), {
+                scrollTrigger: {
+                    trigger: step,
+                    start: "top 75%"
+                },
+                x: (i % 2 === 0) ? -50 : 50,
+                opacity: 0,
+                duration: 1,
+                ease: "power3.out"
+            });
+
+            // Visual Slide In
+            gsap.from(step.querySelector('.wai-proc-visual'), {
+                scrollTrigger: {
+                    trigger: step,
+                    start: "top 75%"
+                },
+                x: (i % 2 === 0) ? 50 : -50,
+                opacity: 0,
+                duration: 1,
+                ease: "power3.out",
+                delay: 0.2
+            });
+
+            // Node Pop
+            gsap.from(step.querySelector('.wai-proc-node'), {
+                scrollTrigger: {
+                    trigger: step,
+                    start: "top 75%"
+                },
+                scale: 0,
+                duration: 0.5,
+                ease: "back.out(2)",
+                delay: 0.4
+            });
+        });
+    </script>
+    <!-- our process -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div class="main_container_dna">
+        <div class="header_dna">
+
+            <h1 class="intro-title">
+                <span>ABOUT US</span>
+            </h1>
+            <p>WELCOME TO THE WILD RIDE OF DNA DIGITAL!</p>
+        </div>
+
+        <div class="intro_text_dna">
+            Born in 2017 from the brilliant mind of DJ, DNA Digital started as a spark and has since ignited a wildfire of creativity across the globe. From our humble beginnings, we've expanded our digital playground to Dubai, South Africa, the USA, and the UK.
+            We're not just another digital agency—we're the masterminds behind some of the world's most memorable brands, and our influence spans countless industries. Whether it's healthcare, retail, or even aerospace, if there's a niche, we've probably
+            nailed it.
+        </div>
+
+
+        <div class="timeline_wrapper_dna mt-5">
+            <div class="timeline_item_dna left_align_dna">
+                <div class="year_badge_dna">2017</div>
+                <div class="card_content_dna">
+                    <h3 class="card_title_dna">India</h3>
+                    <p class="card_description_dna">We started with a bang in india, where we crafted our first campaigns and built a strong foundation. It was here that we honed our skills and set the stage for international expansion.</p>
+                </div>
+            </div>
+
+            <div class="timeline_item_dna right_align_dna">
+                <div class="year_badge_dna">2018-2019</div>
+                <div class="card_content_dna">
+                    <h3 class="card_title_dna">USA &amp; UK</h3>
+                    <p class="card_description_dna">We took glimpses of our glory eastbound in the competitive locations of the USA and UK. Both are chosen domains, environments that now lead them to innovate. Setting up our expertise across continents.</p>
+                </div>
+            </div>
+
+
+            <div class="timeline_item_dna left_align_dna">
+                <div class="year_badge_dna">2020-2021</div>
+                <div class="card_content_dna">
+                    <h3 class="card_title_dna">Dubai</h3>
+                    <p class="card_description_dna">In the city of innovation, Dubai accelerated our creativity. We settled our crafting edge campaigns right at the heart and subsequently led digital marketing in the middle-east.</p>
+                </div>
+            </div>
+
+            <div class="timeline_item_dna right_align_dna">
+                <div class="year_badge_dna">2022-2023</div>
+                <div class="card_content_dna">
+                    <h3 class="card_title_dna">South Africa</h3>
+                    <p class="card_description_dna">Our journey continued to the vibrant diversity of South Africa. We partnered global expertise with local insights, creating impactful campaigns that resonated across different cultures nationwide.</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <script>
+        // Smooth scroll animation
+        var timelineItems = document.querySelectorAll('.timeline_item_dna');
+
+        var observerOptions = {
+            threshold: 0.3,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        var observer = new IntersectionObserver(function(entries) {
+            entries.forEach(function(entry) {
+                if (entry.isIntersecting) {
+                    entry.target.style.animation = 'slideIn 0.8s ease-out forwards';
+                }
+            });
+        }, observerOptions);
+
+        timelineItems.forEach(function(item) {
+            item.style.opacity = '0';
+            observer.observe(item);
+        });
+
+        // Card tilt effect on mouse move
+        var cardss = document.querySelectorAll('.card_content_dna');
+        cards.forEach(function(card) {
+            card.addEventListener('mousemove', function(e) {
+                var rect = this.getBoundingClientRect();
+                var x = e.clientX - rect.left;
+                var y = e.clientY - rect.top;
+
+                var centerX = rect.width / 2;
+                var centerY = rect.height / 2;
+
+                var angleX = (y - centerY) / 10;
+                var angleY = (centerX - x) / 10;
+
+                this.style.transform = 'perspective(1000px) rotateX(' + angleX + 'deg) rotateY(' + angleY + 'deg) translateZ(10px)';
+            });
+
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) translateZ(0)';
+            });
+        });
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <section class="wai-vid-section">
+
+        <!-- Ambient Background -->
+        <div class="wai-vid-glow-bg"></div>
+
+        <!-- Header Content -->
+        <div class="wai-vid-header">
+            <span class="wai-vid-tag">FUTURE IN MOTION</span>
+            <h2 class="wai-vid-title">CRAFTING DIGITAL REALITIES</h2>
+            <p class="wai-vid-desc">
+                We blend strategy and technology to create experiences that don't just look good, but drive real business results.
+            </p>
+        </div>
+
+        <!-- Premium Video Wrapper -->
+        <div class="wai-vid-wrapper" id="videoWrapper">
+            <div class="wai-vid-inner">
+
+                <!-- Cinema Vignette -->
+                <div class="wai-vid-vignette"></div>
+
+                <!-- Glass Reflection -->
+                <div class="wai-vid-reflection"></div>
+
+                <!-- AUTOPLAY VIDEO (Infinite Loop, No Controls) -->
+                <video class="wai-vid-iframe" autoplay loop muted playsinline>
+                    <source src="assets/video/0_Coding_Technology_3840x2160.mov" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+
+            </div>
+        </div>
+
+    </section>
+
+
+
+
+
+
+
+
+
+
+
+
+    <div class="featured-section-wrapper">
+
+        <div class="bg-text-container">
+            <h1 class="bg-text">FEATURED WORK</h1>
+        </div>
+
+        <div class="container cards-overlay-container">
+            <div class="row gx-5 justify-content-between">
+
+                <div class="col-lg-5">
+
+                    <div class="project-card-wrapper">
+                        <div class="project-card">
+                            <img src="assets/images/projects/p-1.jpg" alt="Car">
+                            <div class="card-badge">LeasePlan</div>
+                        </div>
+                    </div>
+
+                    <div class="project-card-wrapper">
+                        <div class="project-card">
+                            <img src="assets/images/projects/p-2.jpg" alt="Coke">
+                            <div class="card-badge">Coca-Cola</div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="col-lg-5 right-col">
+
+                    <div class="project-card-wrapper">
+                        <div class="project-card">
+                            <img src="assets/images/projects/p-3.jpg" alt="Fashion">
+                            <div class="card-badge">Mi Arcus</div>
+                        </div>
+                    </div>
+
+                    <div class="project-card-wrapper">
+                        <div class="project-card">
+                            <img src="assets/images/projects/p-4.jpg" alt="Sweet">
+                            <div class="card-badge">Sweet C</div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- unique section -->
+    <section class="wai-bento-section">
+
+        <!-- Background Layers -->
+        <div class="wai-tech-grid-bg"></div>
+        <div class="wai-noise-overlay"></div>
+        <div class="wai-bento-glow"></div>
+
+        <!-- Decorative Markers (+) -->
+        <div class="wai-decor-plus" style="top: 15%; left: 5%;">+</div>
+        <div class="wai-decor-plus" style="top: 15%; right: 5%;">+</div>
+        <div class="wai-decor-plus" style="bottom: 10%; left: 5%;">+</div>
+        <div class="wai-decor-plus" style="bottom: 10%; right: 5%;">+</div>
+
+        <!-- Header -->
+        <div class="wai-sec-header">
+            <span class="wai-sec-tag">THE ECOSYSTEM</span>
+            <h2 class="wai-sec-title">UNLEASHING DIGITAL POTENTIAL</h2>
+        </div>
+
+        <!-- The Grid -->
+        <div class="wai-bento-container">
+
+            <!-- 1. Creative Video -->
+            <div class="wai-bento-box wai-box-creative">
+                <!-- Abstract Smoke/Ink Video -->
+                <video class="wai-creative-vid" autoplay loop muted playsinline>
+                    <source src="https://videos.pexels.com/video-files/2759484/2759484-hd_1920_1080_30fps.mp4" type="video/mp4">
+                </video>
+                <div class="wai-bento-label" style="color:white;">Vision</div>
+                <div class="wai-bento-head">Viral<br>Creativity</div>
+            </div>
+
+            <!-- 2. ROI Counter -->
+            <div class="wai-bento-box wai-box-roi">
+                <div class="wai-roi-number" id="roiCounter">0%</div>
+                <div class="wai-bento-label" style="margin-top: 10px; color: var(--brand-green); justify-content: center;">Avg. Client Growth</div>
+            </div>
+
+            <!-- 3. Tech Stack -->
+            <div class="wai-bento-box wai-box-tech">
+                <div class="wai-spin-circle">
+                    <i class="ri-cpu-line"></i>
+                </div>
+                <div class="wai-bento-head" style="margin-top: 20px; font-size: 1.3rem; text-align:center;">Future<br>Ready</div>
+            </div>
+
+            <!-- 4. Global Reach -->
+            <div class="wai-bento-box wai-box-global">
+                <div class="wai-map-bg"></div>
+                <div class="wai-pulse-dot"></div>
+                <div class="wai-pulse-dot"></div>
+                <div class="wai-pulse-dot"></div>
+
+                <div style="margin-top: auto;">
+                    <div class="wai-bento-label">Global Scale</div>
+                    <div class="wai-bento-head">Connecting<br>Brands Worldwide</div>
+                </div>
+            </div>
+
+            <!-- 5. Marquee -->
+            <div class="wai-bento-box wai-box-marquee">
+                <div style="height: 150px; overflow: hidden; display: flex; align-items: center;">
+                    <div class="wai-vert-marquee">
+                        <span class="wai-marquee-text">BOLD</span>
+                        <span class="wai-marquee-text">FAST</span>
+                        <span class="wai-marquee-text">ICONIC</span>
+                        <!-- Duplicate for smooth loop -->
+                        <span class="wai-marquee-text">BOLD</span>
+                        <span class="wai-marquee-text">FAST</span>
+                        <span class="wai-marquee-text">ICONIC</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <script>
+        // JS now only handles MOVEMENT, not visibility
+        (function() {
+
+            // 1. Header Animation (Keeping fade-in as header is visible)
+            gsap.from(".wai-sec-header > *", {
+                y: 30,
+                opacity: 0,
+                duration: 1,
+                stagger: 0.2,
+                ease: "power4.out"
+            });
+
+            // 2. Bento Boxes - POP IN ANIMATION
+            gsap.from(".wai-bento-box", {
+                y: 50,
+                duration: 0.8,
+                stagger: 0.1,
+                ease: "back.out(1.2)",
+                delay: 0.3
+            });
+
+            // 3. Number Counter Animation
+            let obj = {
+                val: 0
+            };
+            gsap.to(obj, {
+                val: 300,
+                duration: 2.5,
+                ease: "power2.out",
+                delay: 0.8,
+                onUpdate: () => {
+                    const el = document.getElementById("roiCounter");
+                    if (el) el.innerText = Math.floor(obj.val) + "%";
+                }
+            });
+        })();
+    </script>
+    <!-- unique section -->
+
+
+
+
+
+
+
+
+
+
+
+    <!-- cta section -->
+    <!-- FULL WIDTH CTA SECTION -->
+    <section class="wai-cta-section">
+
+        <!-- 1. Background Image Overlay (Dark Vignette) -->
+        <div class="wai-cta-overlay"></div>
+
+        <!-- 2. Film Grain Texture -->
+        <div class="wai-cta-noise"></div>
+
+        <!-- 3. Glow Accents -->
+        <div class="wai-cta-bg-gradient"></div>
+
+        <!-- 4. Moving Grid Floor -->
+        <div class="wai-cta-grid-floor"></div>
+
+        <!-- 5. Giant BG Text -->
+        <div class="wai-cta-bg-text">GROWTH</div>
+
+        <!-- Main Content -->
+        <div class="wai-cta-content-wrapper">
+
+            <!-- Left Side: Content -->
+            <div class="wai-cta-text-side">
+                <div class="wai-cta-label">Start Your Journey</div>
+                <h2 class="wai-cta-heading">
+                    READY TO <br>
+                    <span>DOMINATE?</span>
+                </h2>
+                <p class="wai-cta-desc">
+                    Don't settle for average. Let's build a digital strategy that crushes the competition. Book your free consultation today.
+                </p>
+
+                <!-- Trust Indicators -->
+                <div style="display: flex; gap: 30px; align-items: center; justify-content: start; color: white;">
+                    <div style="display: flex; align-items: center; gap: 8px;">
+                        <i class="ri-checkbox-circle-fill" style="color: var(--brand-green); font-size: 1.2rem;"></i>
+                        <span style="font-family: 'Orbitron'; font-size: 0.9rem;">Free Audit</span>
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 8px;">
+                        <i class="ri-checkbox-circle-fill" style="color: var(--brand-green); font-size: 1.2rem;"></i>
+                        <span style="font-family: 'Orbitron'; font-size: 0.9rem;">Custom Strategy</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Side: Magnetic Button -->
+            <div class="wai-cta-action-side">
+                <a href="#" class="wai-cta-orb-btn" id="magneticBtn">
+                    <span class="wai-orb-text">LET'S<br>TALK</span>
+                    <i class="ri-arrow-right-line wai-orb-arrow"></i>
+                </a>
+            </div>
+
+        </div>
+
+    </section>
+
+    <script>
+        gsap.registerPlugin(ScrollTrigger);
+
+        // 1. Text Animation
+        gsap.from(".wai-cta-text-side > *", {
+            scrollTrigger: {
+                trigger: ".wai-cta-section",
+                start: "top 70%",
+            },
+            y: 50,
+            opacity: 0,
+            duration: 1,
+            stagger: 0.2,
+            ease: "power4.out"
+        });
+
+        // 2. Button Scale In
+        gsap.from(".wai-cta-orb-btn", {
+            scrollTrigger: {
+                trigger: ".wai-cta-section",
+                start: "top 70%",
+            },
+            scale: 0,
+            opacity: 0,
+            rotation: 180,
+            duration: 1.2,
+            delay: 0.5,
+            ease: "back.out(1.7)"
+        });
+
+        // 3. Magnetic Button Effect (Javascript Logic)
+        const btn = document.getElementById('magneticBtn');
+        const container = document.querySelector('.wai-cta-action-side');
+
+        container.addEventListener('mousemove', (e) => {
+            const rect = btn.getBoundingClientRect();
+            const x = e.clientX - (rect.left + rect.width / 2);
+            const y = e.clientY - (rect.top + rect.height / 2);
+
+            // Move button slightly towards mouse
+            gsap.to(btn, {
+                x: x * 0.4,
+                y: y * 0.4,
+                duration: 0.5,
+                ease: "power2.out"
+            });
+        });
+
+        container.addEventListener('mouseleave', () => {
+            // Reset position
+            gsap.to(btn, {
+                x: 0,
+                y: 0,
+                duration: 0.8,
+                ease: "elastic.out(1, 0.3)"
+            });
+        });
+    </script>
+    <!-- cta section -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <section class="dominance_wrapper_99">
+        <div class="container">
+
+            <div class="row mb-5">
+                <div class="col-12 text-center">
+                    <h6 class="top_accent_text">Redefining Digital Excellence</h6>
+                    <h2 class="main_center_heading">
+                        We craft <span class="grad_text">Connected Brands</span> that <br> dominate the digital chaos.
+                    </h2>
+                </div>
+            </div>
+
+            <div class="row gx-5">
+                <div class="col-lg-5 d-none d-lg-block">
+                    <div class="sticky_left_panel">
+                        <div class="fixed_bg_frame">
+                            <div class="overlay_shade"></div>
+                            <div class="frame_text">
+                                <h3>Market<br>Dominance</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-7">
+                    <div class="right_scroll_content">
+
+                        <h3 class="right_sub_head">Why top brands choose us?</h3>
+                        <p class="agency_para">
+                            We don't believe in guesswork. While other agencies rely on "trends", we rely on **Data & Psychology**. We engineer campaigns that don't just get clicks, but bring in loyal customers and massive Revenue.
+                        </p>
+
+                        <div class="feature_glass_box mt-4 mb-4">
+                            <div class="d-flex align-items-start gap-3 mb-4">
+                                <div class="icon_circle">🚀</div>
+                                <div>
+                                    <h5 class="text-white mb-1">Explosive ROI</h5>
+                                    <p class="small_text">We ensure every rupee spent brings back 3x in value.</p>
+                                </div>
+                            </div>
+                            <div class="d-flex align-items-start gap-3">
+                                <div class="icon_circle">🧠</div>
+                                <div>
+                                    <h5 class="text-white mb-1">AI-Driven Strategy</h5>
+                                    <p class="small_text">Proprietary tools to predict market trends before they happen.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="integrated_img_box">
+                            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1000" alt="Growth Graph">
+                            <div class="roi_badge">+400% Growth</div>
+                        </div>
+
+                        <p class="agency_para mt-4">
+                            Our culture is built on obsession with perfection. From SEO to High-Performance Ads, we are the partners you've been looking for.
+                        </p>
+
+                        <div class="bottom_stats_grid mt-5">
+                            <div class="stat_unit">
+                                <h2>500+</h2>
+                                <span>Projects</span>
+                            </div>
+                            <div class="stat_unit">
+                                <h2>#1</h2>
+                                <span>Ranked</span>
+                            </div>
+                            <div class="stat_unit">
+                                <h2>98%</h2>
+                                <span>Retention</span>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+
+
+
+
+
+
+
+    <section class="wai-split-section">
+
+        <div class="wai-split-grid"></div>
+
+        <div class="wai-split-container">
+
+            <!-- LEFT: CONTENT -->
+            <div class="wai-split-content">
+                <div class="wai-split-tag"> <i class="ri-flashlight-line" style="margin-right: 8px;"></i> Power Your Growth</div>
+                <h2 class="wai-split-title">
+                    DOMINATE YOUR <br>
+                    <span>DIGITAL NICHE</span>
+                </h2>
+                <p class="wai-split-desc">
+                    Stop blending in. We engineer bespoke digital ecosystems that captivate audiences and convert strangers into loyal brand advocates. Data-driven, creatively led, and results-obsessed.
+                </p>
+
+                <!-- Feature List -->
+                <div class="wai-split-features">
+                    <div class="wai-feature-item">
+                        <div class="wai-feat-icon"><i class="ri-radar-line"></i></div>
+                        <div class="wai-feat-text">
+                            <h4>Precision Targeting</h4>
+                            <p>AI-driven audience segmentation finding your perfect customer.</p>
+                        </div>
+                    </div>
+                    <div class="wai-feature-item">
+                        <div class="wai-feat-icon"><i class="ri-magic-line"></i></div>
+                        <div class="wai-feat-text">
+                            <h4>Creative That Converts</h4>
+                            <p>Scroll-stopping visuals designed to trigger instant engagement.</p>
+                        </div>
+                    </div>
+                    <div class="wai-feature-item">
+                        <div class="wai-feat-icon"><i class="ri-rocket-2-line"></i></div>
+                        <div class="wai-feat-text">
+                            <h4>Automated Growth</h4>
+                            <p>Systems that nurture leads 24/7 while you sleep.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <a href="#" class="wai-split-btn">
+                    Start Scaling <i class="ri-arrow-right-line"></i>
+                </a>
+            </div>
+
+            <!-- RIGHT: VISUAL WITH INTEGRATED STATS -->
+            <div class="wai-split-visual">
+
+                <!-- Main Image/GIF Holder -->
+                <div class="wai-visual-wrapper">
+                    <!-- Replace with your actual GIF URL -->
+                    <img src="https://thebrandbee.com/assets/imgs/medicality_img.gif" class="wai-visual-content" alt="Dashboard Animation">
+
+                    <!-- Inner Gradient for subtle depth -->
+                    <div style="position: absolute; inset:0; background: linear-gradient(to top, rgba(0,0,0,0.2), transparent); pointer-events: none;"></div>
+                </div>
+
+                <!-- OVERLAY 1: Revenue (Integrated) -->
+                <div class="wai-stat-overlay stat-revenue">
+                    <div class="stat-icon-box" style="background: var(--brand-green);">
+                        <i class="ri-line-chart-line"></i>
+                    </div>
+                    <div class="stat-text">
+                        <h5>Revenue Growth</h5>
+                        <strong>+240%</strong>
+                    </div>
+                </div>
+
+                <!-- OVERLAY 2: Rating (Integrated) -->
+                <div class="wai-stat-overlay stat-rating">
+                    <div class="stat-icon-box" style="background: #FACC15; color: black;">
+                        <i class="ri-star-fill"></i>
+                    </div>
+                    <div class="stat-text">
+                        <h5>Client Rating</h5>
+                        <strong>4.9/5.0</strong>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <script>
+        gsap.registerPlugin(ScrollTrigger);
+
+        // Content Slide In
+        gsap.from(".wai-split-content > *", {
+            scrollTrigger: {
+                trigger: ".wai-split-section",
+                start: "top 75%",
+            },
+            x: -30,
+            opacity: 0,
+            duration: 1,
+            stagger: 0.1,
+            ease: "power3.out"
+        });
+
+        // Visual Pop Up
+        gsap.from(".wai-split-visual", {
+            scrollTrigger: {
+                trigger: ".wai-split-section",
+                start: "top 75%",
+            },
+            scale: 0.9,
+            opacity: 0,
+            duration: 1.2,
+            ease: "back.out(1.2)"
+        });
+
+        // Stats Pop In
+        gsap.from(".wai-stat-overlay", {
+            scrollTrigger: {
+                trigger: ".wai-split-section",
+                start: "top 75%",
+            },
+            y: 20,
+            opacity: 0,
+            duration: 0.8,
+            delay: 0.6,
+            stagger: 0.2,
+            ease: "power2.out"
+        });
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- testimonials section -->
+
+    <section class="wai-testi-section">
+
+        <div class="wai-grid-overlay"></div>
+        <div class="wai-testi-glow"></div>
+
+        <!-- Header -->
+        <div class="wai-testi-header">
+            <span class="wai-testi-tag">WALL OF LOVE</span>
+            <h2 class="wai-testi-title">TRUSTED BY THE <br>GAME CHANGERS</h2>
+        </div>
+
+        <!-- SLIDER WRAPPER -->
+        <div class="wai-slider-wrapper">
+
+            <!-- ROW 1 (Scrolls Left) -->
+            <div class="wai-slider-track wai-scroll-left">
+                <!-- Duplicate cards set 1 for infinite loop -->
+                <!-- Card 1 -->
+                <div class="wai-review-card">
+                    <div class="wai-quote-icon">"</div>
+                    <div class="wai-stars"><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i></div>
+                    <p class="wai-review-text">"Web Ads India isn't just an agency, they are partners in growth. Our leads skyrocketed by 300% in just 3 months."</p>
+                    <div class="wai-user-row">
+                        <div class="wai-user-avatar"><img src="https://randomuser.me/api/portraits/men/32.jpg" alt="User"></div>
+                        <div class="wai-user-info">
+                            <h4>Vikram Singh</h4><span>CEO, TechFlow</span></div>
+                    </div>
+                </div>
+                <!-- Card 2 -->
+                <div class="wai-review-card">
+                    <div class="wai-quote-icon">"</div>
+                    <div class="wai-stars"><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-half-fill"></i></div>
+                    <p class="wai-review-text">"The futuristic UI design they created for our app is simply mind-blowing. Our user retention has doubled."</p>
+                    <div class="wai-user-row">
+                        <div class="wai-user-avatar"><img src="https://randomuser.me/api/portraits/women/44.jpg" alt="User"></div>
+                        <div class="wai-user-info">
+                            <h4>Sarah Jenkins</h4><span>CMO, Aura Inc.</span></div>
+                    </div>
+                </div>
+                <!-- Card 3 -->
+                <div class="wai-review-card">
+                    <div class="wai-quote-icon">"</div>
+                    <div class="wai-stars"><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i></div>
+                    <p class="wai-review-text">"Detailed reporting and transparent communication. Best digital marketing team we have worked with."</p>
+                    <div class="wai-user-row">
+                        <div class="wai-user-avatar"><img src="https://randomuser.me/api/portraits/men/85.jpg" alt="User"></div>
+                        <div class="wai-user-info">
+                            <h4>Amit Verma</h4><span>Founder, GearUp</span></div>
+                    </div>
+                </div>
+                <!-- Card 4 -->
+                <div class="wai-review-card">
+                    <div class="wai-quote-icon">"</div>
+                    <div class="wai-stars"><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i></div>
+                    <p class="wai-review-text">"They understand the pulse of the market. Our brand visibility has never been higher."</p>
+                    <div class="wai-user-row">
+                        <div class="wai-user-avatar"><img src="https://randomuser.me/api/portraits/women/65.jpg" alt="User"></div>
+                        <div class="wai-user-info">
+                            <h4>Priya Sharma</h4><span>Director, LuxeLiving</span></div>
+                    </div>
+                </div>
+
+                <!-- DUPLICATE CONTENT FOR LOOP (Must match above exactly) -->
+                <div class="wai-review-card">
+                    <div class="wai-quote-icon">"</div>
+                    <div class="wai-stars"><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i></div>
+                    <p class="wai-review-text">"Web Ads India isn't just an agency, they are partners in growth. Our leads skyrocketed by 300% in just 3 months."</p>
+                    <div class="wai-user-row">
+                        <div class="wai-user-avatar"><img src="https://randomuser.me/api/portraits/men/32.jpg" alt="User"></div>
+                        <div class="wai-user-info">
+                            <h4>Vikram Singh</h4><span>CEO, TechFlow</span></div>
+                    </div>
+                </div>
+                <div class="wai-review-card">
+                    <div class="wai-quote-icon">"</div>
+                    <div class="wai-stars"><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-half-fill"></i></div>
+                    <p class="wai-review-text">"The futuristic UI design they created for our app is simply mind-blowing. Our user retention has doubled."</p>
+                    <div class="wai-user-row">
+                        <div class="wai-user-avatar"><img src="https://randomuser.me/api/portraits/women/44.jpg" alt="User"></div>
+                        <div class="wai-user-info">
+                            <h4>Sarah Jenkins</h4><span>CMO, Aura Inc.</span></div>
+                    </div>
+                </div>
+                <div class="wai-review-card">
+                    <div class="wai-quote-icon">"</div>
+                    <div class="wai-stars"><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i></div>
+                    <p class="wai-review-text">"Detailed reporting and transparent communication. Best digital marketing team we have worked with."</p>
+                    <div class="wai-user-row">
+                        <div class="wai-user-avatar"><img src="https://randomuser.me/api/portraits/men/85.jpg" alt="User"></div>
+                        <div class="wai-user-info">
+                            <h4>Amit Verma</h4><span>Founder, GearUp</span></div>
+                    </div>
+                </div>
+                <div class="wai-review-card">
+                    <div class="wai-quote-icon">"</div>
+                    <div class="wai-stars"><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i></div>
+                    <p class="wai-review-text">"They understand the pulse of the market. Our brand visibility has never been higher."</p>
+                    <div class="wai-user-row">
+                        <div class="wai-user-avatar"><img src="https://randomuser.me/api/portraits/women/65.jpg" alt="User"></div>
+                        <div class="wai-user-info">
+                            <h4>Priya Sharma</h4><span>Director, LuxeLiving</span></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ROW 2 (Scrolls Right) -->
+            <div class="wai-slider-track wai-scroll-right">
+                <!-- Card 5 -->
+                <div class="wai-review-card">
+                    <div class="wai-quote-icon">"</div>
+                    <div class="wai-stars"><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i></div>
+                    <p class="wai-review-text">"The SEO strategy was spot on. We ranked #1 for our main keywords within 4 months."</p>
+                    <div class="wai-user-row">
+                        <div class="wai-user-avatar"><img src="https://randomuser.me/api/portraits/men/11.jpg" alt="User"></div>
+                        <div class="wai-user-info">
+                            <h4>Rahul Khanna</h4><span>Marketing Head</span></div>
+                    </div>
+                </div>
+                <!-- Card 6 -->
+                <div class="wai-review-card">
+                    <div class="wai-quote-icon">"</div>
+                    <div class="wai-stars"><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i></div>
+                    <p class="wai-review-text">"Creative ads that actually convert. The ROI on our Facebook campaigns has been insane."</p>
+                    <div class="wai-user-row">
+                        <div class="wai-user-avatar"><img src="https://randomuser.me/api/portraits/women/22.jpg" alt="User"></div>
+                        <div class="wai-user-info">
+                            <h4>Neha Gupta</h4><span>E-com Founder</span></div>
+                    </div>
+                </div>
+                <!-- Card 7 -->
+                <div class="wai-review-card">
+                    <div class="wai-quote-icon">"</div>
+                    <div class="wai-stars"><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i></div>
+                    <p class="wai-review-text">"Professional, Punctual, and Perfect. The team at Web Ads India is simply the best."</p>
+                    <div class="wai-user-row">
+                        <div class="wai-user-avatar"><img src="https://randomuser.me/api/portraits/men/45.jpg" alt="User"></div>
+                        <div class="wai-user-info">
+                            <h4>Jason D'Souza</h4><span>Startup Founder</span></div>
+                    </div>
+                </div>
+                <!-- Card 8 -->
+                <div class="wai-review-card">
+                    <div class="wai-quote-icon">"</div>
+                    <div class="wai-stars"><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i></div>
+                    <p class="wai-review-text">"Highly recommended for anyone looking to scale their business online. Truly premium service."</p>
+                    <div class="wai-user-row">
+                        <div class="wai-user-avatar"><img src="https://randomuser.me/api/portraits/women/88.jpg" alt="User"></div>
+                        <div class="wai-user-info">
+                            <h4>Anjali Mehta</h4><span>Brand Manager</span></div>
+                    </div>
+                </div>
+
+                <!-- DUPLICATE CONTENT FOR LOOP -->
+                <div class="wai-review-card">
+                    <div class="wai-quote-icon">"</div>
+                    <div class="wai-stars"><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i></div>
+                    <p class="wai-review-text">"The SEO strategy was spot on. We ranked #1 for our main keywords within 4 months."</p>
+                    <div class="wai-user-row">
+                        <div class="wai-user-avatar"><img src="https://randomuser.me/api/portraits/men/11.jpg" alt="User"></div>
+                        <div class="wai-user-info">
+                            <h4>Rahul Khanna</h4><span>Marketing Head</span></div>
+                    </div>
+                </div>
+                <div class="wai-review-card">
+                    <div class="wai-quote-icon">"</div>
+                    <div class="wai-stars"><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i></div>
+                    <p class="wai-review-text">"Creative ads that actually convert. The ROI on our Facebook campaigns has been insane."</p>
+                    <div class="wai-user-row">
+                        <div class="wai-user-avatar"><img src="https://randomuser.me/api/portraits/women/22.jpg" alt="User"></div>
+                        <div class="wai-user-info">
+                            <h4>Neha Gupta</h4><span>E-com Founder</span></div>
+                    </div>
+                </div>
+                <div class="wai-review-card">
+                    <div class="wai-quote-icon">"</div>
+                    <div class="wai-stars"><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i></div>
+                    <p class="wai-review-text">"Professional, Punctual, and Perfect. The team at Web Ads India is simply the best."</p>
+                    <div class="wai-user-row">
+                        <div class="wai-user-avatar"><img src="https://randomuser.me/api/portraits/men/45.jpg" alt="User"></div>
+                        <div class="wai-user-info">
+                            <h4>Jason D'Souza</h4><span>Startup Founder</span></div>
+                    </div>
+                </div>
+                <div class="wai-review-card">
+                    <div class="wai-quote-icon">"</div>
+                    <div class="wai-stars"><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i></div>
+                    <p class="wai-review-text">"Highly recommended for anyone looking to scale their business online. Truly premium service."</p>
+                    <div class="wai-user-row">
+                        <div class="wai-user-avatar"><img src="https://randomuser.me/api/portraits/women/88.jpg" alt="User"></div>
+                        <div class="wai-user-info">
+                            <h4>Anjali Mehta</h4><span>Brand Manager</span></div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+
+    <script>
+        // Header Animation on Load
+        gsap.from(".wai-testi-header > *", {
+            y: 30,
+            opacity: 0,
+            duration: 1,
+            stagger: 0.2,
+            ease: "power4.out"
+        });
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <script>
+        gsap.registerPlugin(ScrollTrigger);
+
+        // Right Content Reveal
+        gsap.from(".right_scroll_content > *", {
+            y: 30,
+            opacity: 0,
+            duration: 0.8,
+            stagger: 0.1, // Ek ke baad ek aayega content
+            scrollTrigger: {
+                trigger: ".dominance_wrapper_99",
+                start: "top 70%"
+            }
+        });
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <script>
+        // Pehle check karo GSAP aur ScrollTrigger loaded hain
+        if (typeof gsap !== "undefined" && typeof ScrollTrigger !== "undefined") {
+
+            gsap.registerPlugin(ScrollTrigger);
+
+            // Sab kuch load hone ke baad run karein
+            window.addEventListener("load", () => {
+
+                // 1. Text Zoom Animation
+                gsap.to(".bg-text", {
+                    scale: 15,
+                    opacity: 0.15,
+                    ease: "power1.inOut",
+                    scrollTrigger: {
+                        trigger: ".featured-section-wrapper",
+                        start: "top top",
+                        end: "bottom bottom",
+                        scrub: 1,
+                        // invalidateOnRefresh zaroori hai agar upar content load ho rha ho
+                        invalidateOnRefresh: true
+                    }
+                });
+
+                // 2. Card Animation
+                const cards = document.querySelectorAll(".project-card");
+                cards.forEach(card => {
+                    gsap.to(card, {
+                        rotateX: 0,
+                        translateY: 0,
+                        scale: 1,
+                        opacity: 1,
+                        duration: 0.8,
+                        ease: "back.out(1.2)",
+                        scrollTrigger: {
+                            trigger: card,
+                            start: "top 85%",
+                            end: "top 50%",
+                            scrub: 1
+                        }
+                    });
+                });
+
+                // Height recalculate karne ke liye
+                ScrollTrigger.refresh();
+            });
+        } else {
+            console.error("GSAP is not loaded!");
+        }
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- about our company  -->
+    <!-- <section class="agency-intro">
+        <div class="intro-wrapper">
+
+            <div class="intro-left">
+                <h1 class="intro-title">
+                    We Build <span>Digital Experiences</span> That Stand Out.
+                </h1>
+
+                <p class="intro-desc">
+                    We craft conversion-driven websites, performance marketing campaigns, and full-stack digital branding solutions designed to grow your business and scale your impact online.
+                </p>
+
+                <div class="intro-stats">
+                    <div class="stat">
+                        <h3>250+</h3>
+                        <p>Projects Delivered</p>
+                    </div>
+
+                    <div class="stat">
+                        <h3>98%</h3>
+                        <p>Client Satisfaction</p>
+                    </div>
+
+                    <div class="stat">
+                        <h3>7+</h3>
+                        <p>Years of Expertise</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="intro-right">
+                <div class="service-card">
+                    <h4>Creative Strategy</h4>
+                    <p>Brand clarity, messaging & digital positioning for modern brands.</p>
+                </div>
+
+                <div class="service-card">
+                    <h4>Web Development</h4>
+                    <p>Fast, secure & conversion-focused websites built to perform.</p>
+                </div>
+
+                <div class="service-card">
+                    <h4>Performance Marketing</h4>
+                    <p>SEO, paid ads and automation systems that grow revenue.</p>
+                </div>
+            </div>
+
+        </div>
+    </section> -->
+
+    <!-- about our company  -->
+
+
+
+
+
+    <!-- <section class="webads-stats-section">
+        <div class="webads-stats-container">
+
+            <div class="webads-stat-card card-orange">
+                <div class="webads-dot"></div>
+                <h3 class="webads-stat-title">Numbers And Facts</h3>
+            </div>
+
+            <div class="webads-stat-card card-dark">
+                <div class="webads-dot"></div>
+                <h2 class="webads-number">15+</h2>
+                <p class="webads-text">Numbers And Facts</p>
+            </div>
+
+            <div class="webads-stat-card card-black">
+                <div class="webads-dot dot-orange"></div>
+                <h2 class="webads-number">82+</h2>
+                <p class="webads-text">Completed Projects</p>
+            </div>
+
+            <div class="webads-stat-card card-grey">
+                <div class="webads-dot dot-light"></div>
+                <h2 class="webads-number">12+</h2>
+                <p class="webads-text">Awards Won</p>
+            </div>
+
+        </div>
+    </section>
+ -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <script>
+        /* ========== HX SVC - 3D MOON + PARTICLES + UI ANIMATIONS ========== */
+        (function() {
+            // basic setup
+            const canvas = document.getElementById('hxsvc-canvas');
+            const wrap = canvas.parentElement;
+            let width = wrap.clientWidth;
+            let height = Math.max(500, wrap.clientHeight);
+
+            // resize helper
+            function resizeCanvas() {
+                width = wrap.clientWidth;
+                height = Math.max(500, window.innerHeight * 0.6);
+                canvas.width = width;
+                canvas.height = height;
+            }
+            resizeCanvas();
+            window.addEventListener('resize', resizeCanvas);
+
+            // -------- particles (2D canvas overlay) ----------
+            const ctx = canvas.getContext('2d');
+            const particles = [];
+            for (let i = 0; i < 80; i++) {
+                particles.push({
+                    x: Math.random() * width,
+                    y: Math.random() * height,
+                    r: Math.random() * 1.8 + 0.4,
+                    vx: (Math.random() - 0.5) * 0.2,
+                    vy: Math.random() * 0.5 + 0.2,
+                    alpha: Math.random() * 0.3 + 0.06
+                });
+            }
+
+            function drawParticles() {
+                ctx.clearRect(0, 0, width, height);
+                for (const p of particles) {
+                    ctx.beginPath();
+                    ctx.fillStyle = 'rgba(255,255,255,' + p.alpha + ')';
+                    ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+                    ctx.fill();
+                    p.x += p.vx;
+                    p.y += p.vy;
+                    if (p.x < 0) p.x = width;
+                    if (p.x > width) p.x = 0;
+                    if (p.y > height) p.y = 0;
+                }
+                requestAnimationFrame(drawParticles);
+            }
+            drawParticles();
+
+            // -------- Three.js moon (disabled on small screens for perf) ----------
+            let renderer, scene, camera, moon;
+            let threeEnabled = window.innerWidth >= 900;
+            if (threeEnabled) {
+                renderer = new THREE.WebGLRenderer({
+                    alpha: true,
+                    antialias: true,
+                    canvas: document.createElement('canvas')
+                });
+                renderer.setSize(width, height);
+                renderer.domElement.style.position = 'absolute';
+                renderer.domElement.style.inset = '0';
+                renderer.domElement.style.zIndex = 0;
+                renderer.domElement.style.pointerEvents = 'none';
+                wrap.appendChild(renderer.domElement);
+
+                scene = new THREE.Scene();
+                camera = new THREE.PerspectiveCamera(45, width / height, 0.1, 1000);
+                camera.position.z = 40;
+
+                // lights
+                const amb = new THREE.AmbientLight(0xffffff, 0.3);
+                scene.add(amb);
+                const pLight = new THREE.PointLight(0x20A9E1, 0.9, 200);
+                pLight.position.set(30, 20, 60);
+                scene.add(pLight);
+                const pLight2 = new THREE.PointLight(0x98CC43, 0.4, 200);
+                pLight2.position.set(-40, -20, 10);
+                scene.add(pLight2);
+
+                // moon geometry - slightly detailed
+                const geom = new THREE.SphereGeometry(12, 64, 64);
+                // create a layered material: base + subtle noise via envMap-like reflect
+                const mat = new THREE.MeshStandardMaterial({
+                    color: 0xdadada,
+                    metalness: 0.05,
+                    roughness: 0.7
+                });
+                moon = new THREE.Mesh(geom, mat);
+                moon.rotation.x = 0.3;
+                scene.add(moon);
+
+                // subtle bumps using noise via vertex displacement (optional heavy) - kept off for perf
+
+                function threeAnim() {
+                    requestAnimationFrame(threeAnim);
+                    // gentle rotation
+                    moon.rotation.y += 0.0015;
+                    moon.rotation.x += 0.0006;
+                    renderer.render(scene, camera);
+                }
+                threeAnim();
+
+                // link mouse to moon tilt (subtle)
+                let lastX = 0,
+                    lastY = 0;
+                window.addEventListener('mousemove', (e) => {
+                    const nx = (e.clientX / window.innerWidth) * 2 - 1;
+                    const ny = (e.clientY / window.innerHeight) * 2 - 1;
+                    moon.rotation.y = nx * 0.4;
+                    moon.rotation.x = 0.2 + ny * 0.2;
+                });
+
+                // handle resize for three renderer
+                window.addEventListener('resize', () => {
+                    if (!renderer) return;
+                    width = wrap.clientWidth;
+                    height = Math.max(500, window.innerHeight * 0.6);
+                    renderer.setSize(width, height);
+                    camera.aspect = width / height;
+                    camera.updateProjectionMatrix();
+                });
+            } // end threeEnabled
+
+            // -------- GSAP entrance + card tilt (magnetic) ----------
+            gsap.registerPlugin(ScrollTrigger);
+            gsap.from('.hxsvc-title .hxsvc-title-word', {
+                y: 24,
+                opacity: 0,
+                duration: .7,
+                stagger: 0.05,
+                ease: "power3.out"
+            });
+            gsap.from('.hxsvc-sub', {
+                y: 12,
+                opacity: 0,
+                duration: .6,
+                delay: .08
+            });
+
+            gsap.utils.toArray('.hxsvc-card').forEach((card, i) => {
+                // entrance
+                gsap.from(card, {
+                    y: 40,
+                    opacity: 0,
+                    duration: 1,
+                    delay: 0.12 + i * 0.06,
+                    ease: "power3.out",
+                    scrollTrigger: {
+                        trigger: card,
+                        start: "top 85%"
+                    }
+                });
+
+                // magnetic mouse tilt
+                card.addEventListener('mousemove', (ev) => {
+                    const rect = card.getBoundingClientRect();
+                    const px = (ev.clientX - rect.left) / rect.width;
+                    const py = (ev.clientY - rect.top) / rect.height;
+                    const rx = (py - 0.5) * 8; // rotateX
+                    const ry = (px - 0.5) * -10; // rotateY
+                    card.style.transform = `perspective(900px) translateY(-8px) rotateX(${rx}deg) rotateY(${ry}deg) scale(1.02)`;
+                    // small glow update for icon
+                    const icon = card.querySelector('.hxsvc-icon');
+                    if (icon) icon.style.transform = `translateZ(8px) scale(1.03)`;
+                });
+                card.addEventListener('mouseleave', () => {
+                    card.style.transform = '';
+                    const icon = card.querySelector('.hxsvc-icon');
+                    if (icon) icon.style.transform = '';
+                });
+
+                // keyboard accessibility: Enter/Space simulate click hover effect micro animation
+                card.addEventListener('keydown', (e) => {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                        gsap.fromTo(card, {
+                            scale: 1.02
+                        }, {
+                            scale: 1,
+                            duration: 0.3
+                        });
+                    }
+                });
+            });
+
+            // optional: clicking a card could open modal or navigate - placeholder
+            document.querySelectorAll('.hxsvc-card').forEach((c, idx) => {
+                c.addEventListener('click', () => {
+                    // small pulse feedback
+                    gsap.fromTo(c, {
+                        boxShadow: "0 6px 18px rgba(2,6,12,0.6)"
+                    }, {
+                        boxShadow: "0 28px 90px rgba(32,169,225,0.08)",
+                        duration: 0.45,
+                        yoyo: true,
+                        repeat: 1
+                    });
+                    // Add action: navigate or open service detail
+                    console.log('service click', idx);
+                });
+            });
+
+        })(); // end main
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <script>
+        gsap.from(".webads-bg-video", {
+            scale: 1.3,
+            opacity: 0,
+            duration: 1.8,
+            ease: "power3.out",
+        });
+
+        gsap.from(".webads-video-title", {
+            y: 60,
+            opacity: 0,
+            duration: 1.4,
+            delay: 0.5,
+            ease: "power3.out",
+        });
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <script>
+        gsap.from(".intro-title", {
+            opacity: 0,
+            y: 40,
+            duration: 1
+        });
+        gsap.from(".intro-desc", {
+            opacity: 0,
+            y: 30,
+            duration: 1,
+            delay: .2
+        });
+        gsap.from(".stat-box", {
+            opacity: 0,
+            y: 40,
+            duration: 1,
+            delay: .4,
+            stagger: .15
+        });
+        gsap.from(".floating-card", {
+            opacity: 0,
+            x: 60,
+            duration: 1,
+            delay: .6,
+            stagger: .15
+        });
+    </script>
+
+
+
+
+
+
+
+
+
+    <script>
+        // ---------------- IMAGE SCROLL ZOOM ----------------
+        const imageBox = document.querySelector(".szh-image-wrapper");
+
+        window.addEventListener("scroll", () => {
+            let scrollY = window.scrollY;
+            let newWidth = 55 + scrollY * 0.05;
+
+            if (newWidth > 120) newWidth = 120;
+            if (newWidth < 55) newWidth = 55;
+
+            imageBox.style.width = newWidth + "vw";
+        });
+
+        // ---------------- TYPING TEXT ON SCROLL (FIXED) ----------------
+        const headingText = "IGNITING BRANDS INTO THE DIGITAL FUTURE WITH POWERFUL STRATEGIES, IMMERSIVE EXPERIENCES, AND CREATIVE SOLUTIONS THAT TURN CLICKS INTO CUSTOMERS.";
+        let index = 0;
+        let lastScrollTop = 0;
+
+        const typingBox = document.getElementById("szh-typing");
+
+        window.addEventListener("scroll", () => {
+            let scrollTop = window.scrollY;
+
+            if (scrollTop > lastScrollTop) {
+                // ✅ SCROLL DOWN → TYPE FORWARD
+                if (index < headingText.length) {
+                    index++;
+                    typingBox.innerHTML = headingText.substring(0, index);
+                }
+            } else {
+                // ✅ SCROLL UP → DELETE BACKWARD
+                if (index > 0) {
+                    index--;
+                    typingBox.innerHTML = headingText.substring(0, index);
+                }
+            }
+
+            // update last scroll pos
+            lastScrollTop = scrollTop < 0 ? 0 : scrollTop;
+        });
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Three.js -->
+    <script src="https://cdn.jsdelivr.net/npm/three@0.153.0/build/three.min.js"></script>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
+
+    <script>
+        const texts = [
+            "We Build Digital Success",
+            "We Create Stunning Websites",
+            "We Grow Your Online Presence",
+            "We Scale Businesses With Technology"
+        ];
+
+        let currentText = 0;
+        let charIndex = 0;
+        let typing = true;
+
+        const typingText = document.getElementById("typing-text");
+
+        // --- NEW SETTINGS (slow speed) ---
+        const typeSpeed = 80; // typing delay (slower)
+        const eraseSpeed = 60; // erasing delay (slower)
+        const holdTime = 1000; // time to hold after full typing
+
+        let lastTime = 0;
+
+        function typeAnimation(timestamp) {
+            if (!lastTime) lastTime = timestamp;
+            let delta = timestamp - lastTime;
+
+            let scrollY = window.scrollY;
+            let heroHeight = document.getElementById("hero").offsetHeight;
+
+            // Scroll only inside hero
+            if (scrollY < heroHeight - 50) {
+
+                if (typing) {
+                    if (delta > typeSpeed) {
+                        if (charIndex < texts[currentText].length) {
+                            typingText.innerHTML += texts[currentText].charAt(charIndex);
+                            charIndex++;
+                        } else {
+                            typing = false;
+                            setTimeout(() => {
+                                lastTime = 0;
+                            }, holdTime);
+                        }
+                        lastTime = timestamp;
+                    }
+                } else {
+                    if (delta > eraseSpeed) {
+                        if (charIndex > 0) {
+                            typingText.innerHTML = texts[currentText].substring(0, charIndex - 1);
+                            charIndex--;
+                        } else {
+                            typing = true;
+                            currentText = (currentText + 1) % texts.length;
+                        }
+                        lastTime = timestamp;
+                    }
+                }
+            }
+
+            requestAnimationFrame(typeAnimation);
+        }
+
+        requestAnimationFrame(typeAnimation);
+
+
+
+        // Particles Background
+        particlesJS("particles-js", {
+            "particles": {
+                "number": {
+                    "value": 90
+                },
+                "color": {
+                    "value": ["#20A9E1", "#98CC43"]
+                },
+                "shape": {
+                    "type": "circle"
+                },
+                "opacity": {
+                    "value": 0.5,
+                    "random": true
+                },
+                "size": {
+                    "value": 3,
+                    "random": true
+                },
+                "line_linked": {
+                    "enable": true,
+                    "color": "#20A9E1"
+                },
+                "move": {
+                    "speed": 2
+                }
+            },
+            "interactivity": {
+                "events": {
+                    "onhover": {
+                        "enable": true,
+                        "mode": "grab"
+                    },
+                    "onclick": {
+                        "enable": true,
+                        "mode": "push"
+                    }
+                }
+            }
+        });
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <script>
+        // Mobile Toggler & Dropdown Click for mobile
+        const hamburger = document.querySelector('.hamburger');
+        const navMenu = document.querySelector('.nav-menu');
+
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navMenu.classList.toggle('active');
+        });
+
+        // Close mobile menu on link click
+        document.querySelectorAll('.nav-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                if (window.innerWidth <= 991) {
+                    navMenu.classList.remove('active');
+                    hamburger.classList.remove('active');
+                }
+            });
+        });
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- footer -->
+
+
+    <!-- FOOTER SECTION STARTS HERE -->
+    <footer class="wai-ft-section">
+
+        <div class="wai-ft-grid-bg"></div>
+        <div class="wai-ft-big-text">WEB ADS INDIA</div>
+
+        <div class="wai-ft-container">
+
+            <!-- CTA Section -->
+            <div class="wai-ft-cta-wrapper">
+                <h2 class="wai-ft-cta-title">READY TO DOMINATE?</h2>
+                <button class="wai-ft-btn">
+                    Launch Project <i class="ri-rocket-2-line"></i>
+                </button>
+            </div>
+
+            <!-- Footer Columns -->
+            <div class="wai-ft-row">
+
+                <!-- Brand Col -->
+                <div class="wai-ft-col-large">
+                    <!-- Brand Name / Logo -->
+                    <div style="font-family: 'Orbitron'; font-weight:900; font-size: 1.8rem; color:white;">
+                        WEB ADS INDIA <span style="color:var(--brand-blue);">.</span>
+                    </div>
+                    <p class="wai-ft-brand-desc">
+                        Web Ads India is a premier digital agency crafting futuristic experiences and data-driven marketing strategies for global brands.
+                    </p>
+                </div>
+
+                <!-- Links Col 1 -->
+                <div class="wai-ft-col">
+                    <span class="wai-ft-heading">EXPLORE</span>
+                    <ul class="wai-ft-links">
+                        <li><a href="#" class="wai-ft-link">Home</a></li>
+                        <li><a href="#" class="wai-ft-link">Our Work</a></li>
+                        <li><a href="#" class="wai-ft-link">Services</a></li>
+                        <li><a href="#" class="wai-ft-link">About Us</a></li>
+                    </ul>
+                </div>
+
+                <!-- Links Col 2 -->
+                <div class="wai-ft-col">
+                    <span class="wai-ft-heading">AGENCY</span>
+                    <ul class="wai-ft-links">
+                        <li><a href="#" class="wai-ft-link">Careers</a></li>
+                        <li><a href="#" class="wai-ft-link">Blog</a></li>
+                        <li><a href="#" class="wai-ft-link">Contact</a></li>
+                        <li><a href="#" class="wai-ft-link">Privacy Policy</a></li>
+                    </ul>
+                </div>
+
+                <!-- Newsletter Col -->
+                <div class="wai-ft-col-large">
+                    <span class="wai-ft-heading">STAY AHEAD</span>
+                    <div class="wai-ft-input-group">
+                        <input type="email" placeholder="Enter your email..." class="wai-ft-input">
+                        <button class="wai-ft-submit"><i class="ri-arrow-right-line"></i></button>
+                    </div>
+                    <p style="font-size: 0.8rem; color: rgba(255,255,255,0.3); margin-top: 10px;">
+                        Join our newsletter for latest tech & marketing trends.
+                    </p>
+                </div>
+
+            </div>
+
+            <!-- Bottom Bar -->
+            <div class="wai-ft-bottom">
+                <div>&copy; 2024 Web Ads India. All rights reserved.</div>
+
+                <div class="wai-ft-socials">
+                    <a href="#" class="wai-ft-social-icon"><i class="ri-instagram-line"></i></a>
+                    <a href="#" class="wai-ft-social-icon"><i class="ri-linkedin-fill"></i></a>
+                    <a href="#" class="wai-ft-social-icon"><i class="ri-twitter-x-line"></i></a>
+                    <a href="#" class="wai-ft-social-icon"><i class="ri-youtube-fill"></i></a>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Scrolling Ticker Bottom -->
+        <div class="wai-ft-ticker-wrap">
+            <div class="wai-ft-ticker">
+                <div class="wai-ft-ticker-item">STRATEGY ///</div>
+                <div class="wai-ft-ticker-item">DESIGN ///</div>
+                <div class="wai-ft-ticker-item">DEVELOPMENT ///</div>
+                <div class="wai-ft-ticker-item">GROWTH ///</div>
+                <div class="wai-ft-ticker-item">BRANDING ///</div>
+                <div class="wai-ft-ticker-item">STRATEGY ///</div>
+                <div class="wai-ft-ticker-item">DESIGN ///</div>
+                <div class="wai-ft-ticker-item">DEVELOPMENT ///</div>
+                <div class="wai-ft-ticker-item">GROWTH ///</div>
+                <div class="wai-ft-ticker-item">BRANDING ///</div>
+            </div>
+        </div>
+
+    </footer>
+
+    <script>
+        // --- GSAP ANIMATIONS ---
+        gsap.registerPlugin(ScrollTrigger);
+
+        // Footer Animations
+        gsap.from(".wai-ft-cta-wrapper", {
+            scrollTrigger: {
+                trigger: ".wai-ft-section",
+                start: "top 70%",
+            },
+            scale: 0.9,
+            opacity: 0,
+            duration: 1,
+            ease: "expo.out"
+        });
+
+        gsap.from(".wai-ft-row", {
+            scrollTrigger: {
+                trigger: ".wai-ft-row",
+                start: "top 85%",
+            },
+            y: 30,
+            opacity: 0,
+            duration: 1,
+            delay: 0.2
+        });
+    </script>
+    <!-- footer -->
+
+
+
+
+
+
+
+
+
+
+
+
+    <div id="cursor"></div>
+    <div id="cursor-trail"></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- loader -->
+    <script>
+        // --- SCROLL UNLOCK (Safety) ---
+        function unlockScroll() {
+            document.body.style.overflow = "auto";
+            document.body.style.height = "auto";
+            document.documentElement.style.overflow = "auto";
+            document.documentElement.style.height = "auto";
+
+            const loader = document.querySelector('.wai-loader');
+            if (loader) loader.style.display = 'none';
+        }
+        setTimeout(unlockScroll, 6000); // Safety Timer
+
+        // --- ANIMATION ---
+        const tl = gsap.timeline({
+            onComplete: unlockScroll
+        });
+        const barFill = document.querySelector('.wai-bar-fill');
+        const percentEl = document.getElementById('percentTxt');
+        const statusEl = document.getElementById('statusMsg');
+
+        const messages = ["INITIALIZING...", "LOADING ASSETS...", "SYNCING CORE...", "OPTIMIZING...", "READY!"];
+
+        // 1. Progress Animation
+        let load = {
+            val: 0
+        };
+        tl.to(load, {
+            val: 100,
+            duration: 3.5,
+            ease: "power2.inOut",
+            onUpdate: () => {
+                let pct = Math.floor(load.val);
+                barFill.style.width = pct + "%";
+                percentEl.innerText = pct + "%";
+
+                // Change status message dynamically
+                let msgIndex = Math.min(Math.floor((pct / 100) * messages.length), messages.length - 1);
+                statusEl.innerText = messages[msgIndex];
+            }
+        });
+
+        // 2. Speed up stars at end
+        tl.to(".wai-star-field", {
+            animationDuration: "0.2s",
+            opacity: 1,
+            duration: 0.5
+        }, "-=0.5");
+
+        // 3. Core Overload (Blast Prep)
+        tl.to(".wai-core", {
+            scale: 20,
+            opacity: 0,
+            duration: 0.4,
+            ease: "expo.in"
+        });
+        tl.to(".wai-portal-container", {
+            scale: 5,
+            opacity: 0,
+            duration: 0.4,
+            ease: "expo.in"
+        }, "<");
+
+        // 4. Whiteout Flash
+        tl.to(".wai-whiteout", {
+            opacity: 1,
+            duration: 0.1
+        }, "-=0.1");
+
+        // 5. Reveal Site
+        tl.set(".wai-loader", {
+            display: "none"
+        }); // Remove loader
+        tl.to(".wai-whiteout", {
+            opacity: 0,
+            duration: 1.2,
+            ease: "power2.out"
+        }); // Fade out flash
+
+        // Reveal Navbar & Content
+        tl.to([".brand-area", ".connect-area", ".dock-container", ".wai-nav-wrapper", ".website-content"], {
+            opacity: 1,
+            y: 0,
+            duration: 1,
+            pointerEvents: "all",
+            stagger: 0.2
+        }, "-=0.8");
+    </script>
+    <!-- loader -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <script>
+        gsap.registerPlugin(ScrollTrigger);
+
+        gsap.from(".wa-stat-card", {
+            opacity: 0,
+            y: 60,
+            scale: 0.8,
+            duration: 1.3,
+            stagger: 0.15,
+            ease: "power3.out",
+            scrollTrigger: {
+                trigger: "#wa-stats-section",
+                start: "top 80%",
+            }
+        });
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <script>
+        const cursor = document.getElementById("cursor");
+        const trail = document.getElementById("cursor-trail");
+
+        let mouseX = 0;
+        let mouseY = 0;
+        let trailX = 0;
+        let trailY = 0;
+
+        window.addEventListener("mousemove", (e) => {
+            mouseX = e.clientX;
+            mouseY = e.clientY;
+
+            cursor.style.top = mouseY + "px";
+            cursor.style.left = mouseX + "px";
+
+            // GLOW BURST ON MOVEMENT
+            trail.style.opacity = 1;
+            trail.style.width = "38px";
+            trail.style.height = "38px";
+            setTimeout(() => {
+                trail.style.width = "20px";
+                trail.style.height = "20px";
+                trail.style.opacity = 0.5;
+            }, 90);
+        });
+
+        function animateTrail() {
+            trailX += (mouseX - trailX) * 0.08;
+            trailY += (mouseY - trailY) * 0.08;
+
+            trail.style.left = trailX + "px";
+            trail.style.top = trailY + "px";
+
+            requestAnimationFrame(animateTrail);
+        }
+
+        animateTrail();
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+
+
+
+
+</body>
+
+</html>

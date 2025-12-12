@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Ads India</title>
+
+
+
+
+    <!-- css -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+    <!-- Updated Icon CDN to ensure loading -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.1.0/remixicon.css" rel="stylesheet">
+
+    <!-- GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+    <!-- Three.js + OrbitControls (non-module) -->
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/build/three.min.js"></script>
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.1.0/remixicon.css" rel="stylesheet">
+    <style>
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- PORTAL LOADER -->
+    <div class="wai-loader">
+        <div class="wai-star-field"></div>
+
+        <!-- 1. 3D Orb/Rings -->
+        <div class="wai-portal-container">
+            <div class="wai-core"></div>
+            <div class="wai-ring ring-1"></div>
+            <!-- Cyan Ring -->
+            <div class="wai-ring ring-2"></div>
+            <!-- Green Ring -->
+        </div>
+
+        <!-- 2. Center UI -->
+        <div class="loader-center-ui">
+            <h1 class="wai-brand-glitch">WEB ADS INDIA</h1>
+
+            <div class="wai-bar-container">
+                <div class="wai-bar-fill"></div>
+            </div>
+
+            <div class="wai-status-row">
+                <span id="statusMsg">LOADING ASSETS...</span>
+                <span id="percentTxt">0%</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- FLASH EXIT -->
+    <div class="wai-whiteout"></div>
+
+
+    <!-- Placeholder Background (REMOVE THIS DIV WHEN PASTING INTO YOUR SITE) -->
+    <div style="position: absolute; top:0; left:0; width:100%; height:100%; z-index: -1; background: #0b0b0b;"></div>
+
+
+    <!-- 1. Top Branding (Left) -->
+    <div class="brand-area">
+        <!-- IMAGE ADDED HERE -->
+        <img src="assets/images/logo/WEBADS LOGO WHITE.png" alt="WAI Logo" class="brand-logo-img">
+    </div>
+
+    <!-- 2. Top Connect Area (Right) -->
+    <div class="connect-area">
+        <div class="social-links">
+            <a href="#" class="social-icon" title="LinkedIn"><i class="ri-linkedin-fill"></i></a>
+            <a href="#" class="social-icon" title="Instagram"><i class="ri-instagram-line"></i></a>
+            <a href="#" class="social-icon" title="X (Twitter)"><i class="ri-twitter-x-line"></i></a>
+        </div>
+
+        <!-- Divider (Now Pure CSS) -->
+        <div class="connect-divider"></div>
+
+        <a href="#" class="talk-btn">Let's Talk</a>
+    </div>
+
+    <!-- 3. MAIN DOCK NAVIGATION (Bottom) -->
+    <div class="dock-container">
+
+        <!-- The Glass Capsule -->
+        <nav class="glass-dock">
+
+            <!-- HOME -->
+            <a href="#" class="dock-item active">
+                <i class="ri-home-wifi-line dock-icon"></i>
+                <span class="dock-label">Home</span>
+            </a>
+
+            <!-- ABOUT -->
+            <a href="#" class="dock-item">
+                <i class="ri-user-smile-line dock-icon"></i>
+                <span class="dock-label">About</span>
+            </a>
+
+            <div class="dock-divider"></div>
+
+            <!-- SERVICES (TRIGGER FOR POP-UP) -->
+            <div class="dock-item services-trigger" style="position: relative;">
+                <i class="ri-stack-line dock-icon" style="color: var(--neon-green) !important;"></i>
+                <span class="dock-label" style="color: var(--neon-green) !important;">Services</span>
+
+                <!-- THE HOLO-STACK MENU (Opens Upwards) -->
+                <div class="services-stack">
+                    <a href="#" class="stack-item">
+                        <i class="ri-code-s-slash-line"></i>
+                        <span>Web Development</span>
+                    </a>
+                    <a href="#" class="stack-item">
+                        <i class="ri-smartphone-line"></i>
+                        <span>App Design</span>
+                    </a>
+                    <a href="#" class="stack-item">
+                        <i class="ri-rocket-line"></i>
+                        <span>SEO & Growth</span>
+                    </a>
+                    <a href="#" class="stack-item">
+                        <i class="ri-cube-line"></i>
+                        <span>3D Visuals</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- BLOG -->
+            <a href="#" class="dock-item">
+                <i class="ri-article-line dock-icon"></i>
+                <span class="dock-label">Blog</span>
+            </a>
+
+            <div class="dock-divider"></div>
+
+            <!-- CONTACT -->
+            <a href="#" class="dock-item">
+                <i class="ri-mail-send-line dock-icon"></i>
+                <span class="dock-label">Contact</span>
+            </a>
+
+        </nav>
+
+        <!-- START PROJECT (Floating Separate Button) -->
+        <div class="start-btn-wrapper">
+            <a href="#" class="cta-btn">
+                <span>Start</span>
+                <i class="ri-arrow-right-up-line"></i>
+            </a>
+        </div>
+
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <script>
+        // Animations
+        gsap.from(".dock-container", {
+            y: 100,
+            opacity: 0,
+            duration: 1.2,
+            ease: "power4.out",
+            delay: 0.5
+        });
+
+        gsap.from([".brand-area", ".connect-area"], {
+            y: -50,
+            opacity: 0,
+            duration: 1,
+            ease: "power2.out",
+            delay: 0.2,
+            stagger: 0.2
+        });
+    </script>
+
+
+
+
+
+
+
+    <!-- Three.js -->
+    <script src="https://cdn.jsdelivr.net/npm/three@0.153.0/build/three.min.js"></script>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <script>
+        // Mobile Toggler & Dropdown Click for mobile
+        const hamburger = document.querySelector('.hamburger');
+        const navMenu = document.querySelector('.nav-menu');
+
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navMenu.classList.toggle('active');
+        });
+
+        // Close mobile menu on link click
+        document.querySelectorAll('.nav-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                if (window.innerWidth <= 991) {
+                    navMenu.classList.remove('active');
+                    hamburger.classList.remove('active');
+                }
+            });
+        });
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- footer -->
+
+
+    <!-- FOOTER SECTION STARTS HERE -->
+    <footer class="wai-ft-section">
+
+        <div class="wai-ft-grid-bg"></div>
+        <div class="wai-ft-big-text">WEB ADS INDIA</div>
+
+        <div class="wai-ft-container">
+
+            <!-- CTA Section -->
+            <div class="wai-ft-cta-wrapper">
+                <h2 class="wai-ft-cta-title">READY TO DOMINATE?</h2>
+                <button class="wai-ft-btn">
+                    Launch Project <i class="ri-rocket-2-line"></i>
+                </button>
+            </div>
+
+            <!-- Footer Columns -->
+            <div class="wai-ft-row">
+
+                <!-- Brand Col -->
+                <div class="wai-ft-col-large">
+                    <!-- Brand Name / Logo -->
+                    <div style="font-family: 'Orbitron'; font-weight:900; font-size: 1.8rem; color:white;">
+                        WEB ADS INDIA <span style="color:var(--brand-blue);">.</span>
+                    </div>
+                    <p class="wai-ft-brand-desc">
+                        Web Ads India is a premier digital agency crafting futuristic experiences and data-driven marketing strategies for global brands.
+                    </p>
+                </div>
+
+                <!-- Links Col 1 -->
+                <div class="wai-ft-col">
+                    <span class="wai-ft-heading">EXPLORE</span>
+                    <ul class="wai-ft-links">
+                        <li><a href="#" class="wai-ft-link">Home</a></li>
+                        <li><a href="#" class="wai-ft-link">Our Work</a></li>
+                        <li><a href="#" class="wai-ft-link">Services</a></li>
+                        <li><a href="#" class="wai-ft-link">About Us</a></li>
+                    </ul>
+                </div>
+
+                <!-- Links Col 2 -->
+                <div class="wai-ft-col">
+                    <span class="wai-ft-heading">AGENCY</span>
+                    <ul class="wai-ft-links">
+                        <li><a href="#" class="wai-ft-link">Careers</a></li>
+                        <li><a href="#" class="wai-ft-link">Blog</a></li>
+                        <li><a href="#" class="wai-ft-link">Contact</a></li>
+                        <li><a href="#" class="wai-ft-link">Privacy Policy</a></li>
+                    </ul>
+                </div>
+
+                <!-- Newsletter Col -->
+                <div class="wai-ft-col-large">
+                    <span class="wai-ft-heading">STAY AHEAD</span>
+                    <div class="wai-ft-input-group">
+                        <input type="email" placeholder="Enter your email..." class="wai-ft-input">
+                        <button class="wai-ft-submit"><i class="ri-arrow-right-line"></i></button>
+                    </div>
+                    <p style="font-size: 0.8rem; color: rgba(255,255,255,0.3); margin-top: 10px;">
+                        Join our newsletter for latest tech & marketing trends.
+                    </p>
+                </div>
+
+            </div>
+
+            <!-- Bottom Bar -->
+            <div class="wai-ft-bottom">
+                <div>&copy; 2024 Web Ads India. All rights reserved.</div>
+
+                <div class="wai-ft-socials">
+                    <a href="#" class="wai-ft-social-icon"><i class="ri-instagram-line"></i></a>
+                    <a href="#" class="wai-ft-social-icon"><i class="ri-linkedin-fill"></i></a>
+                    <a href="#" class="wai-ft-social-icon"><i class="ri-twitter-x-line"></i></a>
+                    <a href="#" class="wai-ft-social-icon"><i class="ri-youtube-fill"></i></a>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Scrolling Ticker Bottom -->
+        <div class="wai-ft-ticker-wrap">
+            <div class="wai-ft-ticker">
+                <div class="wai-ft-ticker-item">STRATEGY ///</div>
+                <div class="wai-ft-ticker-item">DESIGN ///</div>
+                <div class="wai-ft-ticker-item">DEVELOPMENT ///</div>
+                <div class="wai-ft-ticker-item">GROWTH ///</div>
+                <div class="wai-ft-ticker-item">BRANDING ///</div>
+                <div class="wai-ft-ticker-item">STRATEGY ///</div>
+                <div class="wai-ft-ticker-item">DESIGN ///</div>
+                <div class="wai-ft-ticker-item">DEVELOPMENT ///</div>
+                <div class="wai-ft-ticker-item">GROWTH ///</div>
+                <div class="wai-ft-ticker-item">BRANDING ///</div>
+            </div>
+        </div>
+
+    </footer>
+
+    <script>
+        // --- GSAP ANIMATIONS ---
+        gsap.registerPlugin(ScrollTrigger);
+
+        // Footer Animations
+        gsap.from(".wai-ft-cta-wrapper", {
+            scrollTrigger: {
+                trigger: ".wai-ft-section",
+                start: "top 70%",
+            },
+            scale: 0.9,
+            opacity: 0,
+            duration: 1,
+            ease: "expo.out"
+        });
+
+        gsap.from(".wai-ft-row", {
+            scrollTrigger: {
+                trigger: ".wai-ft-row",
+                start: "top 85%",
+            },
+            y: 30,
+            opacity: 0,
+            duration: 1,
+            delay: 0.2
+        });
+    </script>
+    <!-- footer -->
+
+
+
+
+
+
+
+
+
+
+
+
+    <div id="cursor"></div>
+    <div id="cursor-trail"></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- loader -->
+    <script>
+        // --- SCROLL UNLOCK (Safety) ---
+        function unlockScroll() {
+            document.body.style.overflow = "auto";
+            document.body.style.height = "auto";
+            document.documentElement.style.overflow = "auto";
+            document.documentElement.style.height = "auto";
+
+            const loader = document.querySelector('.wai-loader');
+            if (loader) loader.style.display = 'none';
+        }
+        setTimeout(unlockScroll, 6000); // Safety Timer
+
+        // --- ANIMATION ---
+        const tl = gsap.timeline({
+            onComplete: unlockScroll
+        });
+        const barFill = document.querySelector('.wai-bar-fill');
+        const percentEl = document.getElementById('percentTxt');
+        const statusEl = document.getElementById('statusMsg');
+
+        const messages = ["INITIALIZING...", "LOADING ASSETS...", "SYNCING CORE...", "OPTIMIZING...", "READY!"];
+
+        // 1. Progress Animation
+        let load = {
+            val: 0
+        };
+        tl.to(load, {
+            val: 100,
+            duration: 3.5,
+            ease: "power2.inOut",
+            onUpdate: () => {
+                let pct = Math.floor(load.val);
+                barFill.style.width = pct + "%";
+                percentEl.innerText = pct + "%";
+
+                // Change status message dynamically
+                let msgIndex = Math.min(Math.floor((pct / 100) * messages.length), messages.length - 1);
+                statusEl.innerText = messages[msgIndex];
+            }
+        });
+
+        // 2. Speed up stars at end
+        tl.to(".wai-star-field", {
+            animationDuration: "0.2s",
+            opacity: 1,
+            duration: 0.5
+        }, "-=0.5");
+
+        // 3. Core Overload (Blast Prep)
+        tl.to(".wai-core", {
+            scale: 20,
+            opacity: 0,
+            duration: 0.4,
+            ease: "expo.in"
+        });
+        tl.to(".wai-portal-container", {
+            scale: 5,
+            opacity: 0,
+            duration: 0.4,
+            ease: "expo.in"
+        }, "<");
+
+        // 4. Whiteout Flash
+        tl.to(".wai-whiteout", {
+            opacity: 1,
+            duration: 0.1
+        }, "-=0.1");
+
+        // 5. Reveal Site
+        tl.set(".wai-loader", {
+            display: "none"
+        }); // Remove loader
+        tl.to(".wai-whiteout", {
+            opacity: 0,
+            duration: 1.2,
+            ease: "power2.out"
+        }); // Fade out flash
+
+        // Reveal Navbar & Content
+        tl.to([".brand-area", ".connect-area", ".dock-container", ".wai-nav-wrapper", ".website-content"], {
+            opacity: 1,
+            y: 0,
+            duration: 1,
+            pointerEvents: "all",
+            stagger: 0.2
+        }, "-=0.8");
+    </script>
+    <!-- loader -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <script>
+        const cursor = document.getElementById("cursor");
+        const trail = document.getElementById("cursor-trail");
+
+        let mouseX = 0;
+        let mouseY = 0;
+        let trailX = 0;
+        let trailY = 0;
+
+        window.addEventListener("mousemove", (e) => {
+            mouseX = e.clientX;
+            mouseY = e.clientY;
+
+            cursor.style.top = mouseY + "px";
+            cursor.style.left = mouseX + "px";
+
+            // GLOW BURST ON MOVEMENT
+            trail.style.opacity = 1;
+            trail.style.width = "38px";
+            trail.style.height = "38px";
+            setTimeout(() => {
+                trail.style.width = "20px";
+                trail.style.height = "20px";
+                trail.style.opacity = 0.5;
+            }, 90);
+        });
+
+        function animateTrail() {
+            trailX += (mouseX - trailX) * 0.08;
+            trailY += (mouseY - trailY) * 0.08;
+
+            trail.style.left = trailX + "px";
+            trail.style.top = trailY + "px";
+
+            requestAnimationFrame(animateTrail);
+        }
+
+        animateTrail();
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+
+
+
+
+</body>
+
+</html>
