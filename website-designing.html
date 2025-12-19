@@ -1,0 +1,1333 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Best Website Designing Services</title>
+    <!-- css -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/index.css">
+    <link rel="stylesheet" href="assets/css/services.css">
+    <link rel="shortcut icon" href="assets/images/logo/fav.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+    <!-- Updated Icon CDN to ensure loading -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.1.0/remixicon.css" rel="stylesheet">
+
+    <!-- GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+    <!-- Three.js + OrbitControls (non-module) -->
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/build/three.min.js"></script>
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.1.0/remixicon.css" rel="stylesheet">
+    <style>
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- PORTAL LOADER -->
+    <div class="wai-loader">
+        <div class="wai-star-field"></div>
+
+        <!-- 1. 3D Orb/Rings -->
+        <div class="wai-portal-container">
+            <div class="wai-core"></div>
+            <div class="wai-ring ring-1"></div>
+            <!-- Cyan Ring -->
+            <div class="wai-ring ring-2"></div>
+            <!-- Green Ring -->
+        </div>
+
+        <!-- 2. Center UI -->
+        <div class="loader-center-ui">
+            <h1 class="wai-brand-glitch">WEB ADS INDIA</h1>
+
+            <div class="wai-bar-container">
+                <div class="wai-bar-fill"></div>
+            </div>
+
+            <div class="wai-status-row">
+                <span id="statusMsg">LOADING ASSETS...</span>
+                <span id="percentTxt">0%</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- FLASH EXIT -->
+    <div class="wai-whiteout"></div>
+
+
+    <!-- Placeholder Background (REMOVE THIS DIV WHEN PASTING INTO YOUR SITE) -->
+    <div style="position: absolute; top:0; left:0; width:100%; height:100%; z-index: -1; background: #0b0b0b;"></div>
+
+
+    <!-- 1. Top Branding (Left) -->
+    <div class="brand-area">
+        <!-- IMAGE ADDED HERE -->
+        <a href="index.html">
+            <img src="assets/images/logo/WEBADS LOGO WHITE.png" alt="WAI Logo" class="brand-logo-img">
+        </a>
+    </div>
+
+    <!-- 2. Top Connect Area (Right) -->
+    <div class="connect-area">
+        <div class="social-links">
+            <a href="#" class="social-icon" title="LinkedIn"><i class="ri-linkedin-fill"></i></a>
+            <a href="#" class="social-icon" title="Instagram"><i class="ri-instagram-line"></i></a>
+            <a href="#" class="social-icon" title="X (Twitter)"><i class="ri-twitter-x-line"></i></a>
+        </div>
+
+        <!-- Divider (Now Pure CSS) -->
+        <div class="connect-divider"></div>
+
+        <a href="contact-us.html" class="talk-btn">Let's Talk</a>
+    </div>
+
+    <!-- 3. MAIN DOCK NAVIGATION (Bottom) -->
+    <div class="dock-container">
+
+        <!-- The Glass Capsule -->
+        <nav class="glass-dock">
+
+            <!-- HOME -->
+            <a href="index.html" class="dock-item active">
+                <i class="ri-home-wifi-line dock-icon"></i>
+                <span class="dock-label">Home</span>
+            </a>
+
+            <!-- ABOUT -->
+            <a href="about-us.html" class="dock-item">
+                <i class="ri-user-smile-line dock-icon"></i>
+                <span class="dock-label">About</span>
+            </a>
+
+            <div class="dock-divider"></div>
+
+            <!-- SERVICES (TRIGGER FOR POP-UP) -->
+            <div class="dock-item services-trigger" style="position: relative;">
+                <i class="ri-stack-line dock-icon" style="color: var(--neon-green) !important;"></i>
+                <span class="dock-label" style="color: var(--neon-green) !important;">Services</span>
+
+                <!-- THE HOLO-STACK MENU (Opens Upwards) -->
+                <div class="services-stack">
+                    <a href="web-developement.html" class="stack-item">
+                        <i class="ri-code-s-slash-line"></i>
+                        <span>Web Development</span>
+                    </a>
+                    <a href="mobile-app-development.html" class="stack-item">
+                        <i class="ri-smartphone-line"></i>
+                        <span>App Design</span>
+                    </a>
+                    <a href="search-engine-optimization.html" class="stack-item">
+                        <i class="ri-rocket-line"></i>
+                        <span>SEO & Growth</span>
+                    </a>
+                    <a href="graphics-designing.html" class="stack-item">
+                        <i class="ri-cube-line"></i>
+                        <span>Graphics Designing</span>
+                    </a>
+                    <a href="video-production.html" class="stack-item">
+                        <i class="ri-cube-line"></i>
+                        <span>Video Production</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- BLOG -->
+            <a href="#" class="dock-item">
+                <i class="ri-article-line dock-icon"></i>
+                <span class="dock-label">Blog</span>
+            </a>
+
+            <div class="dock-divider"></div>
+
+            <!-- CONTACT -->
+            <a href="contact-us.html" class="dock-item">
+                <i class="ri-mail-send-line dock-icon"></i>
+                <span class="dock-label">Contact</span>
+            </a>
+
+        </nav>
+
+        <!-- START PROJECT (Floating Separate Button) -->
+        <div class="start-btn-wrapper">
+            <a href="" class="cta-btn">
+                <span>Start</span>
+                <i class="ri-arrow-right-up-line"></i>
+            </a>
+        </div>
+
+    </div>
+
+
+
+
+
+
+    <!-- 1. HERO SECTION -->
+    <div class="hero_wrapper">
+        <canvas id="webgl_canvas"></canvas>
+
+        <div class="hero_content">
+            <div class="hero_badge">Web Design Services</div>
+            <h1 class="hero_title">
+                Creative <br> <span style="color: var(--neon-blue);">Interfaces</span>
+            </h1>
+            <p class="hero_desc">
+                We design visually stunning, user-friendly websites that convert visitors into customers. From responsive layouts to intuitive navigation — every detail crafted for engagement and performance.
+            </p>
+            <a href="#services" class="magnetic_btn">Start Your Design</a>
+        </div>
+    </div>
+
+
+
+
+
+
+
+    <!-- 2. THE MANIFESTO (CONTENT SECTION) -->
+    <section class="manifesto_sec" id="manifesto">
+        <div class="container">
+            <div class="row align-items-center">
+
+                <!-- Left Side: Big Bold Text -->
+                <div class="col-lg-6">
+                    <h2 class="manifesto_title reveal_item">
+                        Beyond <br> <span class="hollow_text">Web Design.</span>
+                    </h2>
+                </div>
+
+                <!-- Right Side: Content & Stats -->
+                <div class="col-lg-6">
+                    <div class="reveal_item">
+                        <p class="manifesto_text">
+                            Web design is more than just visuals — it’s about creating intuitive, engaging experiences. A well-designed website not only looks professional but also guides users effortlessly toward your goals.
+                            <br><br> We craft responsive, user-centric designs that balance aesthetics with functionality. <strong>Every layout, color, and interaction is designed to enhance usability</strong> — ensuring your brand stands out and converts
+                            visitors into customers. From landing pages to full-scale websites, we design digital experiences that captivate and perform.
+                        </p>
+                    </div>
+
+                    <div class="manifesto_stats reveal_item">
+                        <div>
+                            <span class="m_stat count_up" data-target="95" data-suffix="%">0</span>
+                            <span class="m_label">User Satisfaction</span>
+                        </div>
+                        <div>
+                            <span class="m_stat count_up" data-target="100" data-suffix="%">0</span>
+                            <span class="m_label">Responsive Design</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Background Moving Text -->
+        <div class="big_bg_text">WEB</div>
+    </section>
+
+
+
+
+
+    <script>
+        // Wrapping in block to prevent variable redeclaration
+        {
+            // === 1. THREE.JS WARP SPEED TUNNEL ===
+            const canvas = document.getElementById('webgl_canvas');
+
+            if (canvas) {
+                const scene = new THREE.Scene();
+                const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+                const renderer = new THREE.WebGLRenderer({
+                    canvas: canvas,
+                    alpha: true,
+                    antialias: true
+                });
+
+                renderer.setSize(window.innerWidth, window.innerHeight);
+                renderer.setPixelRatio(window.devicePixelRatio);
+
+                // Simple Points (No texture required)
+                const count = 3000;
+                const positions = new Float32Array(count * 3);
+                const velocities = [];
+
+                for (let i = 0; i < count; i++) {
+                    positions[i * 3] = (Math.random() - 0.5) * 25;
+                    positions[i * 3 + 1] = (Math.random() - 0.5) * 5;
+                    positions[i * 3 + 2] = (Math.random() - 0.5) * 10;
+                    velocities.push({
+                        velocity: 0,
+                        acceleration: 0.02
+                    });
+                }
+
+                const geometry = new THREE.BufferGeometry();
+                geometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
+
+                const material = new THREE.PointsMaterial({
+                    size: 0.04,
+                    color: 0x00F3FF,
+                    transparent: true,
+                    opacity: 0.8
+                });
+
+                const particles = new THREE.Points(geometry, material);
+                scene.add(particles);
+
+                camera.position.z = 5;
+                camera.position.y = 1;
+
+                // Mouse
+                let mouseX = 0;
+                let mouseY = 0;
+                document.addEventListener('mousemove', (e) => {
+                    mouseX = e.clientX / window.innerWidth - 0.5;
+                    mouseY = e.clientY / window.innerHeight - 0.5;
+                });
+
+                const clock = new THREE.Clock();
+
+                const tick = () => {
+                    const elapsedTime = clock.getElapsedTime();
+                    const pos = geometry.attributes.position.array;
+
+                    for (let i = 0; i < count; i++) {
+                        const i3 = i * 3;
+                        const x = pos[i3];
+                        // Wave Motion
+                        pos[i3 + 1] = Math.sin(elapsedTime * 0.3 + x * 0.5) * 1 +
+                            Math.sin(elapsedTime * 0.5 + x * 2) * 0.2;
+                    }
+                    geometry.attributes.position.needsUpdate = true;
+
+                    // Parallax
+                    camera.position.x += (mouseX * 2 - camera.position.x) * 0.05;
+                    camera.position.y += (-mouseY * 2 - camera.position.y) * 0.05;
+                    camera.lookAt(scene.position);
+
+                    renderer.render(scene, camera);
+                    requestAnimationFrame(tick);
+                };
+                tick();
+
+                window.addEventListener('resize', () => {
+                    camera.aspect = window.innerWidth / window.innerHeight;
+                    camera.updateProjectionMatrix();
+                    renderer.setSize(window.innerWidth, window.innerHeight);
+                });
+            }
+
+            // === 2. GSAP ENTRANCE ===
+            gsap.registerPlugin(ScrollTrigger);
+
+            const tl = gsap.timeline();
+            tl.to(".hero_badge", {
+                    opacity: 1,
+                    y: 0,
+                    duration: 1,
+                    ease: "power3.out",
+                    delay: 0.5
+                })
+                .to(".hero_title", {
+                    opacity: 1,
+                    duration: 1.2,
+                    ease: "power3.out"
+                }, "-=0.8")
+                .to(".hero_desc", {
+                    opacity: 1,
+                    y: 0,
+                    duration: 1,
+                    ease: "power3.out"
+                }, "-=0.8")
+                .to(".magnetic_btn", {
+                    opacity: 1,
+                    y: 0,
+                    duration: 0.8,
+                    ease: "back.out(1.7)"
+                }, "-=0.6")
+                .to(".scroll_indicator", {
+                    opacity: 1,
+                    duration: 1
+                }, "-=0.5");
+
+            // === 3. MANIFESTO ANIMATIONS ===
+            // Background Text
+            gsap.to(".big_bg_text", {
+                x: "-20%",
+                ease: "none",
+                scrollTrigger: {
+                    trigger: ".manifesto_sec",
+                    start: "top bottom",
+                    end: "bottom top",
+                    scrub: 1
+                }
+            });
+
+            // Content Reveal
+            const reveals = document.querySelectorAll(".reveal_item");
+            reveals.forEach((item) => {
+                gsap.to(item, {
+                    opacity: 1,
+                    y: 0,
+                    duration: 1,
+                    ease: "power3.out",
+                    scrollTrigger: {
+                        trigger: item,
+                        start: "top 85%",
+                        toggleActions: "play none none reverse"
+                    }
+                });
+            });
+
+            // Counters
+            const counters = document.querySelectorAll('.count_up');
+            counters.forEach(counter => {
+                const target = parseFloat(counter.getAttribute('data-target'));
+                const suffix = counter.getAttribute('data-suffix');
+
+                ScrollTrigger.create({
+                    trigger: counter,
+                    start: "top 85%",
+                    once: true,
+                    onEnter: () => {
+                        let obj = {
+                            val: 0
+                        };
+                        gsap.to(obj, {
+                            val: target,
+                            duration: 2,
+                            ease: "power2.out",
+                            onUpdate: () => {
+                                counter.innerText = obj.val.toFixed(target % 1 === 0 ? 0 : 1) + suffix;
+                            }
+                        });
+                    }
+                });
+            });
+        }
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- === SERVICES SECTION === -->
+    <section class="services_section">
+
+        <!-- Backgrounds SAME -->
+        <div class="svc_bg_display active" id="bg-default"></div>
+        <div class="svc_bg_display" id="bg-web"></div>
+        <div class="svc_bg_display" id="bg-ecom"></div>
+        <div class="svc_bg_display" id="bg-saas"></div>
+        <div class="svc_bg_display" id="bg-pwa"></div>
+        <div class="svc_bg_display" id="bg-sec"></div>
+
+        <div class="svc_overlay"></div>
+
+        <div class="container">
+            <span class="sec_label">Core Capabilities</span>
+
+            <div class="service_list" onmouseleave="resetBg()">
+
+                <!-- 01 -->
+                <div class="service_row" onmouseenter="changeBg('bg-web')">
+                    <div class="svc_content">
+                        <span class="svc_id">01</span>
+                        <h2 class="svc_title">Wireframes</h2>
+                    </div>
+                    <div class="svc_details">
+                        <span class="svc_tags">UX / Layouts</span>
+                        <i class="fas fa-arrow-right svc_arrow"></i>
+                    </div>
+                </div>
+
+                <!-- 02 -->
+                <div class="service_row" onmouseenter="changeBg('bg-ecom')">
+                    <div class="svc_content">
+                        <span class="svc_id">02</span>
+                        <h2 class="svc_title">Visual Design</h2>
+                    </div>
+                    <div class="svc_details">
+                        <span class="svc_tags">Web / Mobile</span>
+                        <i class="fas fa-arrow-right svc_arrow"></i>
+                    </div>
+                </div>
+
+                <!-- 03 -->
+                <div class="service_row" onmouseenter="changeBg('bg-saas')">
+                    <div class="svc_content">
+                        <span class="svc_id">03</span>
+                        <h2 class="svc_title">Landing Pages</h2>
+                    </div>
+                    <div class="svc_details">
+                        <span class="svc_tags">Responsive / Conversion</span>
+                        <i class="fas fa-arrow-right svc_arrow"></i>
+                    </div>
+                </div>
+
+                <!-- 04 -->
+                <div class="service_row" onmouseenter="changeBg('bg-pwa')">
+                    <div class="svc_content">
+                        <span class="svc_id">04</span>
+                        <h2 class="svc_title">UI Components</h2>
+                    </div>
+                    <div class="svc_details">
+                        <span class="svc_tags">Buttons / Cards</span>
+                        <i class="fas fa-arrow-right svc_arrow"></i>
+                    </div>
+                </div>
+
+                <!-- 05 -->
+                <div class="service_row" onmouseenter="changeBg('bg-sec')">
+                    <div class="svc_content">
+                        <span class="svc_id">05</span>
+                        <h2 class="svc_title">Brand Graphics</h2>
+                    </div>
+                    <div class="svc_details">
+                        <span class="svc_tags">Icons / Illustrations</span>
+                        <i class="fas fa-arrow-right svc_arrow"></i>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+
+
+    <!-- Simple Script for BG Change -->
+    <script>
+        function changeBg(id) {
+            // Hide all
+            document.querySelectorAll('.svc_bg_display').forEach(el => el.classList.remove('active'));
+            // Show target
+            const target = document.getElementById(id);
+            if (target) target.classList.add('active');
+        }
+
+        function resetBg() {
+            changeBg('bg-default');
+        }
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- PROCESS SECTION -->
+    <section class="process_section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-5">
+                    <div class="sticky_header">
+                        <span class="sec_tag">Workflow</span>
+                        <h2 class="sec_title">Creative<br>Flow</h2>
+                        <p class="sec_desc">
+                            Design is not decoration. It’s a process. We follow a structured creative workflow to deliver visuals that communicate, convert, and elevate your brand.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="col-lg-6 offset-lg-1">
+                    <div class="timeline_wrapper">
+                        <!-- Line & Fill -->
+                        <div class="timeline_line"></div>
+                        <div class="timeline_fill" id="progressLine"></div>
+
+                        <!-- Step 1 -->
+                        <div class="process_step">
+                            <div class="step_dot"></div>
+                            <span class="step_num">01.</span>
+                            <h3 class="step_title">Research & Insight</h3>
+                            <p class="step_desc">
+                                We understand your brand, audience, and competitors. Moodboards, references, and creative direction are defined before design begins.
+                            </p>
+                        </div>
+
+                        <!-- Step 2 -->
+                        <div class="process_step">
+                            <div class="step_dot"></div>
+                            <span class="step_num">02.</span>
+                            <h3 class="step_title">Concept Design</h3>
+                            <p class="step_desc">
+                                Multiple visual concepts crafted with typography, color systems, and layout exploration aligned to your brand identity.
+                            </p>
+                        </div>
+
+                        <!-- Step 3 -->
+                        <div class="process_step">
+                            <div class="step_dot"></div>
+                            <span class="step_num">03.</span>
+                            <h3 class="step_title">Visual Execution</h3>
+                            <p class="step_desc">
+                                Pixel-perfect designs refined with feedback. High-quality assets prepared for digital, social, and print usage.
+                            </p>
+                        </div>
+
+                        <!-- Step 4 -->
+                        <div class="process_step">
+                            <div class="step_dot"></div>
+                            <span class="step_num">04.</span>
+                            <h3 class="step_title">Deliver & Scale</h3>
+                            <p class="step_desc">
+                                Final files delivered in all required formats with brand consistency ensured across platforms and campaigns.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- TECH STACK SECTION -->
+    <section class="tech_section">
+        <div class="container">
+            <span class="sec_tag">Tools</span>
+            <h2 class="sec_title">Design Stack</h2>
+
+            <div class="tech_grid">
+                <div class="tech_item"><i class="fas fa-pen-nib"></i> Illustrator</div>
+                <div class="tech_item"><i class="fas fa-layer-group"></i> Photoshop</div>
+                <div class="tech_item"><i class="fab fa-figma"></i> Figma</div>
+                <div class="tech_item"><i class="fab fa-sketch"></i> Sketch</div>
+                <div class="tech_item"><i class="fas fa-palette"></i> Color Theory</div>
+                <div class="tech_item"><i class="fas fa-font"></i> Typography</div>
+                <div class="tech_item"><i class="fas fa-vector-square"></i> Brand Systems</div>
+                <div class="tech_item"><i class="fas fa-print"></i> Print Ready</div>
+                <div class="tech_item"><i class="fas fa-mobile-alt"></i> Social Media</div>
+                <div class="tech_item"><i class="fas fa-bullhorn"></i> Ad Creatives</div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+    <!-- === CTA SECTION (FIXED PARALLAX BG) === -->
+    <section class="cta_parallax_wrapper">
+
+        <!-- Floating Glass Content -->
+        <div class="cta_glass_box">
+            <span class="cta_tag">System Ready</span>
+            <h2 class="cta_headline">Ready to<br>Deploy?</h2>
+            <p class="cta_subtext">Let's build a digital experience that defines your industry. Our team is on standby.</p>
+            <a href="#" class="cta_neon_btn">Start Project</a>
+        </div>
+
+    </section>
+
+
+
+
+    <script>
+        gsap.registerPlugin(ScrollTrigger);
+
+        // 1. NEON LINE FILL ANIMATION
+        const timelineWrapper = document.querySelector(".timeline_wrapper");
+
+        gsap.to("#progressLine", {
+            height: "100%",
+            ease: "none",
+            scrollTrigger: {
+                trigger: ".timeline_wrapper",
+                start: "top 60%", // Starts when section is in view
+                end: "bottom 60%",
+                scrub: 0.5,
+            }
+        });
+
+        // 2. ACTIVE STEP HIGHLIGHT
+        const steps = document.querySelectorAll('.process_step');
+        steps.forEach(step => {
+            ScrollTrigger.create({
+                trigger: step,
+                start: "top 70%",
+                end: "bottom 70%",
+                onEnter: () => step.classList.add('active'),
+                onLeave: () => step.classList.remove('active'),
+                onEnterBack: () => step.classList.add('active'),
+                onLeaveBack: () => step.classList.remove('active')
+            });
+        });
+
+        // 3. TECH REVEAL (Simple Fade Up)
+        gsap.from(".tech_item", {
+            y: 30,
+            opacity: 0,
+            stagger: 0.05,
+            duration: 0.8,
+            ease: "power2.out",
+            scrollTrigger: {
+                trigger: ".tech_grid",
+                start: "top 85%"
+            }
+        });
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <script>
+        {
+            // === 1. THREE.JS PARTICLE WAVE (Enhanced & Fixed) ===
+            const canvas = document.getElementById('webgl_canvas');
+
+            if (canvas) {
+                const scene = new THREE.Scene();
+                const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+                const renderer = new THREE.WebGLRenderer({
+                    canvas: canvas,
+                    alpha: true,
+                    antialias: true
+                });
+
+                renderer.setSize(window.innerWidth, window.innerHeight);
+                renderer.setPixelRatio(window.devicePixelRatio);
+
+                // Create Circle Texture for cleaner particles
+                const getTexture = () => {
+                    const canvas = document.createElement('canvas');
+                    canvas.width = 32;
+                    canvas.height = 32;
+                    const ctx = canvas.getContext('2d');
+                    const grad = ctx.createRadialGradient(16, 16, 0, 16, 16, 16);
+                    grad.addColorStop(0, 'rgba(255, 255, 255, 1)');
+                    grad.addColorStop(1, 'rgba(0, 0, 0, 0)');
+                    ctx.fillStyle = grad;
+                    ctx.fillRect(0, 0, 32, 32);
+                    const texture = new THREE.Texture(canvas);
+                    texture.needsUpdate = true;
+                    return texture;
+                };
+
+                const count = 2000;
+                const positions = new Float32Array(count * 3);
+
+                for (let i = 0; i < count; i++) {
+                    positions[i * 3] = (Math.random() - 0.5) * 25; // x wide spread
+                    positions[i * 3 + 1] = (Math.random() - 0.5) * 5; // y height
+                    positions[i * 3 + 2] = (Math.random() - 0.5) * 10; // z depth
+                }
+
+                const geometry = new THREE.BufferGeometry();
+                geometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
+
+                const material = new THREE.PointsMaterial({
+                    size: 0.15,
+                    color: 0x00F3FF,
+                    map: getTexture(),
+                    transparent: true,
+                    opacity: 0.8,
+                    depthWrite: false,
+                    blending: THREE.AdditiveBlending
+                });
+
+                const particles = new THREE.Points(geometry, material);
+                scene.add(particles);
+
+                camera.position.z = 5;
+                camera.position.y = 1;
+
+                let mouseX = 0;
+                let mouseY = 0;
+
+                const onMouseMove = (e) => {
+                    mouseX = e.clientX / window.innerWidth - 0.5;
+                    mouseY = e.clientY / window.innerHeight - 0.5;
+                };
+                document.addEventListener('mousemove', onMouseMove);
+
+                const clock = new THREE.Clock();
+
+                const tick = () => {
+                    const elapsedTime = clock.getElapsedTime();
+
+                    // Wave Motion
+                    const positions = geometry.attributes.position.array;
+                    for (let i = 0; i < count; i++) {
+                        const i3 = i * 3;
+                        const x = positions[i3];
+                        // Organic Wave Formula
+                        positions[i3 + 1] = Math.sin(elapsedTime * 0.3 + x * 0.5) * 1 +
+                            Math.sin(elapsedTime * 0.5 + x * 2) * 0.2;
+                    }
+                    geometry.attributes.position.needsUpdate = true;
+
+                    // Parallax
+                    camera.position.x += (mouseX * 2 - camera.position.x) * 0.05;
+                    camera.position.y += (-mouseY * 2 - camera.position.y) * 0.05;
+                    camera.lookAt(scene.position);
+
+                    renderer.render(scene, camera);
+                    requestAnimationFrame(tick);
+                };
+
+                tick();
+
+                window.addEventListener('resize', () => {
+                    camera.aspect = window.innerWidth / window.innerHeight;
+                    camera.updateProjectionMatrix();
+                    renderer.setSize(window.innerWidth, window.innerHeight);
+                });
+            }
+
+            // === 2. GSAP ENTRANCE ===
+            const tl = gsap.timeline();
+            tl.to(".hero_badge", {
+                    opacity: 1,
+                    y: 0,
+                    duration: 1,
+                    ease: "power3.out",
+                    delay: 0.5
+                })
+                .to(".hero_title", {
+                    opacity: 1,
+                    duration: 1.2,
+                    ease: "power3.out"
+                }, "-=0.8")
+                .to(".hero_desc", {
+                    opacity: 1,
+                    y: 0,
+                    duration: 1,
+                    ease: "power3.out"
+                }, "-=0.8")
+                .to(".magnetic_btn", {
+                    opacity: 1,
+                    y: 0,
+                    duration: 0.8,
+                    ease: "back.out(1.7)"
+                }, "-=0.6")
+                .to(".scroll_indicator", {
+                    opacity: 1,
+                    duration: 1
+                }, "-=0.5");
+
+            // === 3. SERVICES SCROLL REVEAL ===
+            gsap.registerPlugin(ScrollTrigger);
+            gsap.from(".holo_card", {
+                y: 50,
+                opacity: 0,
+                stagger: 0.1,
+                duration: 0.8,
+                ease: "power2.out",
+                scrollTrigger: {
+                    trigger: ".services_sec",
+                    start: "top 70%"
+                }
+            });
+
+            // === 4. TILT EFFECT LOGIC (Vanilla JS) ===
+            const cards = document.querySelectorAll('.holo_card');
+
+            cards.forEach(card => {
+                card.addEventListener('mousemove', (e) => {
+                    if (window.innerWidth < 992) return; // Disable on mobile
+
+                    const rect = card.getBoundingClientRect();
+                    const x = e.clientX - rect.left;
+                    const y = e.clientY - rect.top;
+
+                    const xPct = x / rect.width;
+                    const yPct = y / rect.height;
+
+                    const xRotation = (yPct - 0.5) * 20; // -10 to 10 deg
+                    const yRotation = (xPct - 0.5) * -20;
+
+                    card.style.transform = `perspective(1000px) rotateX(${xRotation}deg) rotateY(${yRotation}deg) scale(1.02)`;
+                });
+
+                card.addEventListener('mouseleave', () => {
+                    card.style.transform = `perspective(1000px) rotateX(0) rotateY(0) scale(1)`;
+                });
+            });
+        }
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <script>
+        // Animations
+        gsap.from(".dock-container", {
+            y: 100,
+            opacity: 0,
+            duration: 1.2,
+            ease: "power4.out",
+            delay: 0.5
+        });
+
+        gsap.from([".brand-area", ".connect-area"], {
+            y: -50,
+            opacity: 0,
+            duration: 1,
+            ease: "power2.out",
+            delay: 0.2,
+            stagger: 0.2
+        });
+    </script>
+
+
+    <!-- Three.js -->
+    <script src="https://cdn.jsdelivr.net/npm/three@0.153.0/build/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
+
+
+    <script>
+        // Mobile Toggler & Dropdown Click for mobile
+        const hamburger = document.querySelector('.hamburger');
+        const navMenu = document.querySelector('.nav-menu');
+
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navMenu.classList.toggle('active');
+        });
+
+        // Close mobile menu on link click
+        document.querySelectorAll('.nav-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                if (window.innerWidth <= 991) {
+                    navMenu.classList.remove('active');
+                    hamburger.classList.remove('active');
+                }
+            });
+        });
+    </script>
+
+
+
+
+    <!-- FOOTER SECTION STARTS HERE -->
+    <footer class="wai-ft-section">
+
+        <div class="wai-ft-grid-bg"></div>
+        <div class="wai-ft-big-text">WEB ADS INDIA</div>
+
+        <div class="wai-ft-container">
+
+            <!-- CTA Section -->
+            <div class="wai-ft-cta-wrapper">
+                <h2 class="wai-ft-cta-title">READY TO DOMINATE?</h2>
+                <button class="wai-ft-btn">
+                    Launch Project <i class="ri-rocket-2-line"></i>
+                </button>
+            </div>
+
+            <!-- Footer Columns -->
+            <div class="wai-ft-row">
+
+                <!-- Brand Col -->
+                <div class="wai-ft-col-large">
+                    <!-- Brand Name / Logo -->
+                    <div style="font-family: 'Orbitron'; font-weight:900; font-size: 1.8rem; color:white;">
+                        WEB ADS INDIA <span style="color:var(--brand-blue);">.</span>
+                    </div>
+                    <p class="wai-ft-brand-desc">
+                        Web Ads India is a premier digital agency crafting futuristic experiences and data-driven marketing strategies for global brands.
+                    </p>
+                </div>
+
+                <!-- Links Col 1 -->
+                <div class="wai-ft-col">
+                    <span class="wai-ft-heading">EXPLORE</span>
+                    <ul class="wai-ft-links">
+                        <li><a href="#" class="wai-ft-link">Home</a></li>
+                        <li><a href="#" class="wai-ft-link">Our Work</a></li>
+                        <li><a href="#" class="wai-ft-link">Services</a></li>
+                        <li><a href="#" class="wai-ft-link">About Us</a></li>
+                    </ul>
+                </div>
+
+                <!-- Links Col 2 -->
+                <div class="wai-ft-col">
+                    <span class="wai-ft-heading">AGENCY</span>
+                    <ul class="wai-ft-links">
+                        <li><a href="#" class="wai-ft-link">Careers</a></li>
+                        <li><a href="#" class="wai-ft-link">Blog</a></li>
+                        <li><a href="#" class="wai-ft-link">Contact</a></li>
+                        <li><a href="#" class="wai-ft-link">Privacy Policy</a></li>
+                    </ul>
+                </div>
+
+                <!-- Newsletter Col -->
+                <div class="wai-ft-col-large">
+                    <span class="wai-ft-heading">STAY AHEAD</span>
+                    <div class="wai-ft-input-group">
+                        <input type="email" placeholder="Enter your email..." class="wai-ft-input">
+                        <button class="wai-ft-submit"><i class="ri-arrow-right-line"></i></button>
+                    </div>
+                    <p style="font-size: 0.8rem; color: rgba(255,255,255,0.3); margin-top: 10px;">
+                        Join our newsletter for latest tech & marketing trends.
+                    </p>
+                </div>
+
+            </div>
+
+            <!-- Bottom Bar -->
+            <div class="wai-ft-bottom">
+                <div>&copy; 2024 Web Ads India. All rights reserved.</div>
+
+                <div class="wai-ft-socials">
+                    <a href="#" class="wai-ft-social-icon"><i class="ri-instagram-line"></i></a>
+                    <a href="#" class="wai-ft-social-icon"><i class="ri-linkedin-fill"></i></a>
+                    <a href="#" class="wai-ft-social-icon"><i class="ri-twitter-x-line"></i></a>
+                    <a href="#" class="wai-ft-social-icon"><i class="ri-youtube-fill"></i></a>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Scrolling Ticker Bottom -->
+        <div class="wai-ft-ticker-wrap">
+            <div class="wai-ft-ticker">
+                <div class="wai-ft-ticker-item">STRATEGY ///</div>
+                <div class="wai-ft-ticker-item">DESIGN ///</div>
+                <div class="wai-ft-ticker-item">DEVELOPMENT ///</div>
+                <div class="wai-ft-ticker-item">GROWTH ///</div>
+                <div class="wai-ft-ticker-item">BRANDING ///</div>
+                <div class="wai-ft-ticker-item">STRATEGY ///</div>
+                <div class="wai-ft-ticker-item">DESIGN ///</div>
+                <div class="wai-ft-ticker-item">DEVELOPMENT ///</div>
+                <div class="wai-ft-ticker-item">GROWTH ///</div>
+                <div class="wai-ft-ticker-item">BRANDING ///</div>
+            </div>
+        </div>
+
+    </footer>
+
+    <script>
+        // --- GSAP ANIMATIONS ---
+        gsap.registerPlugin(ScrollTrigger);
+
+        // Footer Animations
+        gsap.from(".wai-ft-cta-wrapper", {
+            scrollTrigger: {
+                trigger: ".wai-ft-section",
+                start: "top 70%",
+            },
+            scale: 0.9,
+            opacity: 0,
+            duration: 1,
+            ease: "expo.out"
+        });
+
+        gsap.from(".wai-ft-row", {
+            scrollTrigger: {
+                trigger: ".wai-ft-row",
+                start: "top 85%",
+            },
+            y: 30,
+            opacity: 0,
+            duration: 1,
+            delay: 0.2
+        });
+    </script>
+    <!-- footer -->
+
+
+
+    <div id="cursor"></div>
+    <div id="cursor-trail"></div>
+
+
+
+    <!-- loader -->
+    <script>
+        // --- SCROLL UNLOCK (Safety) ---
+        function unlockScroll() {
+            document.body.style.overflow = "auto";
+            document.body.style.height = "auto";
+            document.documentElement.style.overflow = "auto";
+            document.documentElement.style.height = "auto";
+
+            const loader = document.querySelector('.wai-loader');
+            if (loader) loader.style.display = 'none';
+        }
+        setTimeout(unlockScroll, 6000); // Safety Timer
+
+        // --- ANIMATION ---
+        const tl = gsap.timeline({
+            onComplete: unlockScroll
+        });
+        const barFill = document.querySelector('.wai-bar-fill');
+        const percentEl = document.getElementById('percentTxt');
+        const statusEl = document.getElementById('statusMsg');
+
+        const messages = ["INITIALIZING...", "LOADING ASSETS...", "SYNCING CORE...", "OPTIMIZING...", "READY!"];
+
+        // 1. Progress Animation
+        let load = {
+            val: 0
+        };
+        tl.to(load, {
+            val: 100,
+            duration: 3.5,
+            ease: "power2.inOut",
+            onUpdate: () => {
+                let pct = Math.floor(load.val);
+                barFill.style.width = pct + "%";
+                percentEl.innerText = pct + "%";
+
+                // Change status message dynamically
+                let msgIndex = Math.min(Math.floor((pct / 100) * messages.length), messages.length - 1);
+                statusEl.innerText = messages[msgIndex];
+            }
+        });
+
+        // 2. Speed up stars at end
+        tl.to(".wai-star-field", {
+            animationDuration: "0.2s",
+            opacity: 1,
+            duration: 0.5
+        }, "-=0.5");
+
+        // 3. Core Overload (Blast Prep)
+        tl.to(".wai-core", {
+            scale: 20,
+            opacity: 0,
+            duration: 0.4,
+            ease: "expo.in"
+        });
+        tl.to(".wai-portal-container", {
+            scale: 5,
+            opacity: 0,
+            duration: 0.4,
+            ease: "expo.in"
+        }, "<");
+
+        // 4. Whiteout Flash
+        tl.to(".wai-whiteout", {
+            opacity: 1,
+            duration: 0.1
+        }, "-=0.1");
+
+        // 5. Reveal Site
+        tl.set(".wai-loader", {
+            display: "none"
+        }); // Remove loader
+        tl.to(".wai-whiteout", {
+            opacity: 0,
+            duration: 1.2,
+            ease: "power2.out"
+        }); // Fade out flash
+
+        // Reveal Navbar & Content
+        tl.to([".brand-area", ".connect-area", ".dock-container", ".wai-nav-wrapper", ".website-content"], {
+            opacity: 1,
+            y: 0,
+            duration: 1,
+            pointerEvents: "all",
+            stagger: 0.2
+        }, "-=0.8");
+    </script>
+    <!-- loader -->
+
+    <script>
+        const cursor = document.getElementById("cursor");
+        const trail = document.getElementById("cursor-trail");
+
+        let mouseX = 0;
+        let mouseY = 0;
+        let trailX = 0;
+        let trailY = 0;
+
+        window.addEventListener("mousemove", (e) => {
+            mouseX = e.clientX;
+            mouseY = e.clientY;
+
+            cursor.style.top = mouseY + "px";
+            cursor.style.left = mouseX + "px";
+
+            // GLOW BURST ON MOVEMENT
+            trail.style.opacity = 1;
+            trail.style.width = "38px";
+            trail.style.height = "38px";
+            setTimeout(() => {
+                trail.style.width = "20px";
+                trail.style.height = "20px";
+                trail.style.opacity = 0.5;
+            }, 90);
+        });
+
+        function animateTrail() {
+            trailX += (mouseX - trailX) * 0.08;
+            trailY += (mouseY - trailY) * 0.08;
+
+            trail.style.left = trailX + "px";
+            trail.style.top = trailY + "px";
+
+            requestAnimationFrame(animateTrail);
+        }
+
+        animateTrail();
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+
+
+
+
+</body>
+
+</html>

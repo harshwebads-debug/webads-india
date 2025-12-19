@@ -13,6 +13,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/index.css">
     <link rel="stylesheet" href="assets/css/services.css">
+    <link rel="shortcut icon" href="assets/images/logo/fav.png" type="image/x-icon">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
@@ -81,7 +82,9 @@
     <!-- 1. Top Branding (Left) -->
     <div class="brand-area">
         <!-- IMAGE ADDED HERE -->
-        <img src="assets/images/logo/WEBADS LOGO WHITE.png" alt="WAI Logo" class="brand-logo-img">
+        <a href="index.html">
+            <img src="assets/images/logo/WEBADS LOGO WHITE.png" alt="WAI Logo" class="brand-logo-img">
+        </a>
     </div>
 
     <!-- 2. Top Connect Area (Right) -->
@@ -95,7 +98,7 @@
         <!-- Divider (Now Pure CSS) -->
         <div class="connect-divider"></div>
 
-        <a href="#" class="talk-btn">Let's Talk</a>
+        <a href="contact-us.html" class="talk-btn">Let's Talk</a>
     </div>
 
     <!-- 3. MAIN DOCK NAVIGATION (Bottom) -->
@@ -129,17 +132,21 @@
                         <i class="ri-code-s-slash-line"></i>
                         <span>Web Development</span>
                     </a>
-                    <a href="web-developement.html" class="stack-item">
+                    <a href="mobile-app-development.html" class="stack-item">
                         <i class="ri-smartphone-line"></i>
                         <span>App Design</span>
                     </a>
-                    <a href="web-developement.html" class="stack-item">
+                    <a href="search-engine-optimization.html" class="stack-item">
                         <i class="ri-rocket-line"></i>
                         <span>SEO & Growth</span>
                     </a>
-                    <a href="web-developement.html" class="stack-item">
+                    <a href="graphics-designing.html" class="stack-item">
                         <i class="ri-cube-line"></i>
-                        <span>3D Visuals</span>
+                        <span>Graphics Designing</span>
+                    </a>
+                    <a href="video-production.html" class="stack-item">
+                        <i class="ri-cube-line"></i>
+                        <span>Video Production</span>
                     </a>
                 </div>
             </div>
@@ -174,22 +181,22 @@
 
 
 
-
     <!-- 1. HERO SECTION -->
     <div class="hero_wrapper">
         <canvas id="webgl_canvas"></canvas>
 
         <div class="hero_content">
-            <div class="hero_badge">Web Engineering v2.0</div>
+            <div class="hero_badge">Web Development Services</div>
             <h1 class="hero_title">
                 Digital <br> <span style="color: var(--neon-blue);">Evolution</span>
             </h1>
             <p class="hero_desc">
-                We construct high-performance digital ecosystems. Scalable, secure, and engineered for dominance.
+                We design and develop fast, secure, and conversion-focused websites that power your business growth. From corporate sites to complex web applications — engineered for performance and scale.
             </p>
-            <a href="#services" class="magnetic_btn">Start Build</a>
+            <a href="#services" class="magnetic_btn">Start Your Project</a>
         </div>
     </div>
+
 
 
 
@@ -207,7 +214,7 @@
                 <!-- Left Side: Big Bold Text -->
                 <div class="col-lg-6">
                     <h2 class="manifesto_title reveal_item">
-                        Beyond <br> <span class="hollow_text">Binary.</span>
+                        Beyond <br> <span class="hollow_text">Code.</span>
                     </h2>
                 </div>
 
@@ -215,20 +222,20 @@
                 <div class="col-lg-6">
                     <div class="reveal_item">
                         <p class="manifesto_text">
-                            In a digital-first world, your website is your heartbeat. We don't just stack code; we engineer experiences.
-                            <br><br> Most agencies build for today. <strong>We build for the next decade.</strong> Our philosophy is simple: Speed wins, design converts, and stability scales. We strip away the bloat and focus on the core—delivering pixel-perfect,
-                            high-performance architectures that define market leaders.
+                            In a digital-first world, your website is your strongest business asset. We don’t just write code — we architect scalable systems that perform under pressure.
+                            <br><br> While most agencies focus on visuals alone, <strong>we engineer performance, security, and growth from day one.</strong> Every line of code is intentional. Every experience is optimized. Fast-loading interfaces, conversion-driven
+                            design, and rock-solid infrastructure — built to evolve with your business, not break under it.
                         </p>
                     </div>
 
                     <div class="manifesto_stats reveal_item">
                         <div>
                             <span class="m_stat count_up" data-target="0.2" data-suffix="s">0</span>
-                            <span class="m_label">Avg Load Time</span>
+                            <span class="m_label">Lightning Load Time</span>
                         </div>
                         <div>
                             <span class="m_stat count_up" data-target="99.9" data-suffix="%">0</span>
-                            <span class="m_label">Uptime Guarantee</span>
+                            <span class="m_label">Infrastructure Uptime</span>
                         </div>
                     </div>
                 </div>
@@ -237,8 +244,9 @@
         </div>
 
         <!-- Background Moving Text -->
-        <div class="big_bg_text">SYSTEM</div>
+        <div class="big_bg_text">ENGINEERED</div>
     </section>
+
 
 
     <script>
@@ -450,16 +458,13 @@
     <!-- === SERVICES SECTION === -->
     <section class="services_section">
 
-        <!-- Dynamic Background (Changes based on hover) -->
-        <!-- Default BG -->
-        <div class="svc_bg_display active" id="bg-default" style="background-image: url('https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=1000');"></div>
-
-        <!-- Hover BGs -->
-        <div class="svc_bg_display" id="bg-web" style="background-image: url('https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1000');"></div>
-        <div class="svc_bg_display" id="bg-ecom" style="background-image: url('https://images.unsplash.com/photo-1556742049-0cfed4f7a07d?q=80&w=1000');"></div>
-        <div class="svc_bg_display" id="bg-saas" style="background-image: url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1000');"></div>
-        <div class="svc_bg_display" id="bg-pwa" style="background-image: url('https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?q=80&w=1000');"></div>
-        <div class="svc_bg_display" id="bg-sec" style="background-image: url('https://images.unsplash.com/photo-1510511459019-5dda7724fd87?q=80&w=1000');"></div>
+        <!-- Backgrounds SAME -->
+        <div class="svc_bg_display active" id="bg-default"></div>
+        <div class="svc_bg_display" id="bg-web"></div>
+        <div class="svc_bg_display" id="bg-ecom"></div>
+        <div class="svc_bg_display" id="bg-saas"></div>
+        <div class="svc_bg_display" id="bg-pwa"></div>
+        <div class="svc_bg_display" id="bg-sec"></div>
 
         <div class="svc_overlay"></div>
 
@@ -468,62 +473,62 @@
 
             <div class="service_list" onmouseleave="resetBg()">
 
-                <!-- Service 1 -->
+                <!-- 01 -->
                 <div class="service_row" onmouseenter="changeBg('bg-web')">
                     <div class="svc_content">
                         <span class="svc_id">01</span>
-                        <h2 class="svc_title">Custom Web Apps</h2>
+                        <h2 class="svc_title">Web Apps</h2>
                     </div>
                     <div class="svc_details">
-                        <span class="svc_tags">React / Next.js / Node</span>
+                        <span class="svc_tags">React / Next / Node</span>
                         <i class="fas fa-arrow-right svc_arrow"></i>
                     </div>
                 </div>
 
-                <!-- Service 2 -->
+                <!-- 02 -->
                 <div class="service_row" onmouseenter="changeBg('bg-ecom')">
                     <div class="svc_content">
                         <span class="svc_id">02</span>
                         <h2 class="svc_title">E-Commerce</h2>
                     </div>
                     <div class="svc_details">
-                        <span class="svc_tags">Shopify / WooCommerce</span>
+                        <span class="svc_tags">Shopify / Woo</span>
                         <i class="fas fa-arrow-right svc_arrow"></i>
                     </div>
                 </div>
 
-                <!-- Service 3 -->
+                <!-- 03 -->
                 <div class="service_row" onmouseenter="changeBg('bg-saas')">
                     <div class="svc_content">
                         <span class="svc_id">03</span>
-                        <h2 class="svc_title">SaaS Platforms</h2>
+                        <h2 class="svc_title">SaaS Systems</h2>
                     </div>
                     <div class="svc_details">
-                        <span class="svc_tags">Cloud / API / Database</span>
+                        <span class="svc_tags">Cloud / APIs</span>
                         <i class="fas fa-arrow-right svc_arrow"></i>
                     </div>
                 </div>
 
-                <!-- Service 4 -->
+                <!-- 04 -->
                 <div class="service_row" onmouseenter="changeBg('bg-pwa')">
                     <div class="svc_content">
                         <span class="svc_id">04</span>
-                        <h2 class="svc_title">PWA Systems</h2>
+                        <h2 class="svc_title">PWA Builds</h2>
                     </div>
                     <div class="svc_details">
-                        <span class="svc_tags">Mobile / Offline / Fast</span>
+                        <span class="svc_tags">Offline / Fast</span>
                         <i class="fas fa-arrow-right svc_arrow"></i>
                     </div>
                 </div>
 
-                <!-- Service 5 -->
+                <!-- 05 -->
                 <div class="service_row" onmouseenter="changeBg('bg-sec')">
                     <div class="svc_content">
                         <span class="svc_id">05</span>
                         <h2 class="svc_title">Cyber Security</h2>
                     </div>
                     <div class="svc_details">
-                        <span class="svc_tags">SSL / Audit / Encryption</span>
+                        <span class="svc_tags">SSL / Audits</span>
                         <i class="fas fa-arrow-right svc_arrow"></i>
                     </div>
                 </div>
@@ -531,6 +536,7 @@
             </div>
         </div>
     </section>
+
 
     <!-- Simple Script for BG Change -->
     <script>
@@ -573,7 +579,7 @@
                         <span class="sec_tag">Workflow</span>
                         <h2 class="sec_title">The<br>Blueprint</h2>
                         <p class="sec_desc">
-                            We don't rely on luck. We follow a battle-tested architecture to ensure your digital product is built for scale, speed, and dominance.
+                            No guesswork. No shortcuts. We follow a proven development framework to build digital products that are fast, scalable, and future-ready.
                         </p>
                     </div>
                 </div>
@@ -590,7 +596,7 @@
                             <span class="step_num">01.</span>
                             <h3 class="step_title">Discovery & Logic</h3>
                             <p class="step_desc">
-                                We map the territory. We analyze competitors, define user journeys, and architect the database schema to ensure a bug-free foundation.
+                                We understand your business, users, and competitors. Clear requirements, solid architecture, and a strong technical foundation.
                             </p>
                         </div>
 
@@ -600,7 +606,7 @@
                             <span class="step_num">02.</span>
                             <h3 class="step_title">Precision Design</h3>
                             <p class="step_desc">
-                                High-fidelity wireframes and interactive prototypes. This ensures the UI/UX is beautiful, intuitive and conversion-focused.
+                                Clean UI and intuitive UX designed to guide users and drive conversions, validated through wireframes and prototypes.
                             </p>
                         </div>
 
@@ -610,7 +616,7 @@
                             <span class="step_num">03.</span>
                             <h3 class="step_title">Core Development</h3>
                             <p class="step_desc">
-                                Clean, modular code using modern stacks. We build for performance, ensuring sub-second load times.
+                                Robust, scalable code built with modern technologies, optimized for speed, security, and long-term performance.
                             </p>
                         </div>
 
@@ -620,7 +626,7 @@
                             <span class="step_num">04.</span>
                             <h3 class="step_title">Deploy & Scale</h3>
                             <p class="step_desc">
-                                Rigorous testing across devices. Deployment on high-speed AWS edge networks and real-time analytics setup.
+                                Thorough testing, smooth deployment, and performance monitoring to ensure reliability as your product grows.
                             </p>
                         </div>
                     </div>
@@ -629,17 +635,18 @@
         </div>
     </section>
 
+
     <!-- TECH STACK SECTION -->
     <section class="tech_section">
         <div class="container">
             <span class="sec_tag">Technology</span>
-            <h2 class="sec_title">Our Arsenal</h2>
+            <h2 class="sec_title">Tech Stack</h2>
 
             <div class="tech_grid">
                 <!-- Icons added via FontAwesome -->
-                <div class="tech_item"><i class="fab fa-react" style="color: #61DAFB;"></i> React.js</div>
-                <div class="tech_item"><i class="fab fa-node-js" style="color: #68A063;"></i> Node.js</div>
-                <div class="tech_item"><i class="fab fa-js" style="color: #F7DF1E;"></i> Next.js</div>
+                <div class="tech_item"><i class="fab fa-react" style="color: #61DAFB;"></i> React</div>
+                <div class="tech_item"><i class="fab fa-node-js" style="color: #68A063;"></i> Node</div>
+                <div class="tech_item"><i class="fab fa-js" style="color: #F7DF1E;"></i> Next</div>
                 <div class="tech_item"><i class="fab fa-python" style="color: #FFD43B;"></i> Python</div>
                 <div class="tech_item"><i class="fab fa-aws" style="color: #FF9900;"></i> AWS</div>
                 <div class="tech_item"><i class="fab fa-docker" style="color: #2496ED;"></i> Docker</div>
@@ -650,6 +657,7 @@
             </div>
         </div>
     </section>
+
 
     <!-- === CTA SECTION (FIXED PARALLAX BG) === -->
     <section class="cta_parallax_wrapper">
